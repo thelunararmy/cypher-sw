@@ -1,0 +1,89 @@
+%%% LaTeX Template: Designer's CV
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
+%%% Date: March 2012
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document properties and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,final]{book}
+
+% misc
+\renewcommand{\familydefault}{bch}	% font
+\pagestyle{plain}					% no pagenumbering
+\setlength{\parindent}{0pt}			% no paragraph indentation
+
+%doc color
+\newcommand{\doccolor}{NavyBlue}
+
+% required packages (add your own)
+\usepackage{flowfram}										% column layout
+\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}% margins
+\usepackage{graphicx}										% figures
+\usepackage{url}											% URLs
+\usepackage[usenames,dvipsnames]{xcolor}					% color
+\usepackage{multicol}										% columns env.
+	\setlength{\columnsep}{1cm}
+\usepackage{paralist}										% compact lists
+\usepackage{tikz}
+\usepackage{hyperref}										% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=teal,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define macros (for convience)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Sep}{\vspace{1.5mm}}
+\newcommand{\SmallSep}{\vspace{0.5mm}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My special commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\newcommand{\newSection}[1]{\section*{#1} \HRule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pre-document setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Title page
+\begin{titlepage}
+
+\center
+\vspace*{\fill}
+\HRule \\[4mm]
+% Doc name
+{ \huge \textsc{Star Wars Cypher} }\\ % Title of your document
+{ \small \textit{Playing in a Galaxy Far Far Away using the Cypher System} }\\[3mm]
+% Author
+\emph{Written by:}\\ 
+{\small \textsc{JC Bailey \& Greg Linklater}} \\% Your name 
+\HRule \\[3mm]
+\vspace*{\fill}
+\end{titlepage} 
+
+% Intro
+\begin{multicols*}{2}
+[\newSection{How To Play}]
+\subsection*{Something}
+Playing Star Wars Simplified (SWS) is similar to traditional pen \& paper roleplaying games. You, the player, controls a single character
+\end{multicols*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
