@@ -8,80 +8,146 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document properties and packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,12pt,final]{book}
+\documentclass[a4paper,10pt,final]{book}
 
 % misc
 \renewcommand{\familydefault}{bch}	% font
 \pagestyle{plain}					% no pagenumbering
 \setlength{\parindent}{0pt}			% no paragraph indentation
 
-%doc color
-\newcommand{\doccolor}{NavyBlue}
-
 % required packages (add your own)
-\usepackage{flowfram}										% column layout
-\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}% margins
-\usepackage{graphicx}										% figures
-\usepackage{url}											% URLs
-\usepackage[usenames,dvipsnames]{xcolor}					% color
+\usepackage{graphicx}
+\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry} % margins
+\usepackage{epic}
+\usepackage{figsize}
+\usepackage{float}
+\usepackage[pdfpagelabels=false,bookmarks]{hyperref}
+\usepackage[section]{placeins}
+\usepackage{cite}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{csquotes}
+\usepackage[usenames,dvipsnames]{xcolor} % color
+\usepackage{tikz}
 \usepackage{multicol}										% columns env.
 	\setlength{\columnsep}{1cm}
 \usepackage{paralist}										% compact lists
-\usepackage{tikz}
-\usepackage{hyperref}										% Hyperlinks
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=teal,
-}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define macros (for convience)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Sep}{\vspace{1.5mm}}
 \newcommand{\SmallSep}{\vspace{0.5mm}}
+\newcommand{\DocTitle}{Star Wars Cypher}
+\newcommand{\DocSubtitle}{Playing in A Galaxy Far Far Away using the Cypher System}
+\newcommand{\DocAuthors}{JC Bailey \& Greg Linklater}
+\newcommand{\DocKeywords}{}
+\newcommand{\DocColor}{NavyBlue}
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{RoyalBlue}{rgb}{0.0, 0.14, 0.4}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % My special commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-\newcommand{\newSection}[1]{\section*{#1} \HRule}
+\newcommand{\newSection}[1]{\section*{#1} \addcontentsline{toc}{section}{#1} \label{sec:#1} \HRule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{docsection}[1]
+{
+  \begin{multicols*}{2}[\newSection{#1}]
+}
+{
+  \end{multicols*}
+  \newpage
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pre-document setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetikzlibrary{arrows,shapes}
+\hypersetup{
+%draft, % Uncomment to remove all links (useful for printing in black and white)
+colorlinks=true, breaklinks=true, %bookmarks=true,bookmarksnumbered,
+urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, % Link colors
+filecolor=\DocColor,
+pdftitle={\DocTitle}, % PDF title
+pdfauthor={\DocAuthors}, % PDF Author
+pdfsubject={\DocSubtitle}, % PDF Subject
+pdfkeywords={\DocKeywords}, % PDF Keywords
+pdfcreator={pdfLaTeX}, % PDF Creator
+pdfproducer={LaTeX}, % PDF producer
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{titlepage}
 
 \center
 \vspace*{\fill}
 \HRule \\[4mm]
+
 % Doc name
-{ \huge \textsc{Star Wars Cypher} }\\ % Title of your document
-{ \small \textit{Playing in a Galaxy Far Far Away using the Cypher System} }\\[3mm]
+{ \huge \textsc{\DocTitle} }\\ % Title of your document
+{ \small \textit{\DocSubtitle} }\\[3mm]
+
 % Author
-\emph{Written by:}\\ 
-{\small \textsc{JC Bailey \& Greg Linklater}} \\% Your name 
+\emph{Written by:}\\
+{\small \textsc{JC Bailey \& Greg Linklater}} \\% Your name
+
 \HRule \\[3mm]
 \vspace*{\fill}
-\end{titlepage} 
 
-% Intro
-\begin{multicols*}{2}
-[\newSection{How To Play}]
+\end{titlepage}
+
+\pagestyle{plain}
+\begin{center}
+\textit{This page is left intentionally blank.}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Intro
+\begin{docsection}{How To Play}
+
 \subsection*{Something}
+
 Playing Star Wars Simplified (SWS) is similar to traditional pen \& paper roleplaying games. You, the player, controls a single character
-\end{multicols*}
+
+\end{docsection}
+
+%Front matter
+\begin{docsection}{Some Other Stuff}
+
+Space to be filled with content. This should also be a multi-column page.
+
+\end{docsection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End document
