@@ -1,10 +1,3 @@
-%%% LaTeX Template: Designer's CV
-%%%
-%%% Source: http://www.howtotex.com/
-%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
-%%% Date: March 2012
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document properties and packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,12 +23,14 @@
 \usepackage{amsfonts}
 \usepackage{url}
 \usepackage{listings}
+\usepackage[utf8]{inputenc}
 \usepackage{csquotes}
 \usepackage[usenames,dvipsnames]{xcolor} % color
 \usepackage{tikz}
 \usepackage{multicol}										% columns env.
 	\setlength{\columnsep}{1cm}
 \usepackage{paralist}										% compact lists
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define macros (for convience)
@@ -73,6 +68,16 @@
   \newpage
 }
 
+\newenvironment{docBlankPage}
+{
+	\begin{center}
+	\vspace*{\fill}
+}
+{
+	\vspace*{\fill}
+	\end{center}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pre-document setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,12 +100,12 @@ pdfproducer={LaTeX}, % PDF producer
 % Begin document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\frontmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title Page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{titlepage}
-
 \center
 \vspace*{\fill}
 \HRule \\[4mm]
@@ -111,34 +116,59 @@ pdfproducer={LaTeX}, % PDF producer
 
 % Author
 \emph{Written by:}\\
-{\small \textsc{JC Bailey \& Greg Linklater}} \\% Your name
+{\small \textsc{\DocAuthors}} \\% Your name
 
 \HRule \\[3mm]
 \vspace*{\fill}
-
 \end{titlepage}
 
-\pagestyle{plain}
-\begin{center}
-\textit{This page is left intentionally blank.}
-\end{center}
 
+\pagestyle{plain}
+\begin{docBlankPage}
+\textit{This page is left intentionally blank.}
+\end{docBlankPage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
-\newpage
+\mainmatter % This stupid fucking function adds a blank page and I dont know why.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Intro
+% Intro
 \begin{docsection}{How To Play}
 
-\subsection*{Something}
+The rules of the Cypher System are quite straightforward at their heart, as 
+all of gameplay is based around a few core concepts. This chapter provides a
+ brief explanation of how to play the game, and it’s useful for learning the 
+ game. \\
 
-Playing Star Wars Simplified (SWS) is similar to traditional pen \& paper roleplaying games. You, the player, controls a single character
+The Cypher System uses a twenty-sided die (1d20) to determine the results of most actions. 
+Whenever a roll of any kind is called for and no die is specified, roll a d20.
+The game master sets a difficulty for any given task. There are ten degrees of difficulty. 
+Thus, the difficulty of a task can be rated on a scale of 1 to 10. \\
+
+Each difficulty has a target number
+associated with it. The target number is
+always three times the task’s difficulty, so
+a difficulty 4 task has a target number of
+12. To succeed at the task, you must roll
+the target number or higher. \\
+
+Character skills, favorable circumstances,
+or excellent equipment can decrease
+the difficulty of a task. \\
+
+For example, if a character is trained in climbing, she turns
+a difficulty 6 climb into a difficulty 5 climb.
+This is called decreasing the difficulty by
+one step. If she is specialized in climbing,
+she turns a difficulty 6 climb into a difficulty
+4 climb. This is called decreasing the
+difficulty by two steps. \\
+
 
 \end{docsection}
 
