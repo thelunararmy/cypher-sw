@@ -60,17 +60,17 @@
 \newcommand{\statPool}[5]
 {
 	\subsubsection*{#1 Stat Pools}
-	\label{subsub:#1StatPools} 	
+	\label{subsub:#1StatPools}
 	\begin{center}
-	\begin{tabular}{ |c|c| } 
+	\begin{tabular}{ |c|c| }
 	\hline
-	\textbf{Stat} & \textbf{Pool Starting Value} \\ 
+	\textbf{Stat} & \textbf{Pool Starting Value} \\
 	\hline \hline
-	Might & #2 \\ 
+	Might & #2 \\
 	\hline
  	Speed & #3  \\
- 	\hline 
- 	Intelligence & #4  \\ 
+ 	\hline
+ 	Intelligence & #4  \\
  	\hline
 	\end{tabular}
 	\end{center}
@@ -108,6 +108,9 @@
 % Pre-document setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\lefthyphenmin=100000
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
 \usetikzlibrary{arrows,shapes}
 \hypersetup{
 %draft, % Uncomment to remove all links (useful for printing in black and white)
@@ -195,791 +198,443 @@ Players may choose from the following types for their characters: \hyperlink{sub
 
 Soldiers combine discipline with martial skills to become the best pure warriors in the Galaxy. Soldiers can be stalwart defenders of those in need, money-seeking marauders, or brave adventurers. They can be hired guns, noble champions, or cold-hearted killers. They fight for glory, for honour, to right wrongs, to gain power, to acquire wealth,  or simply for the thrill of battle. \par
 
-Soldiers are strong and steadfast, relying primarily on their ability to wield heavy weapons and armour due their high Might -- or alternatively a quicker resolve with medium or light weapons and high Speed. Their decent rounded stats make them the best general purpose fighters and an essential parts of any adventuring party, since few can match the consistent damage dealt by a well equipped, and motivated, soldier. 
+Soldiers are strong and steadfast, relying primarily on their ability to wield heavy weapons and armour due their high Might -- or alternatively a quicker resolve with medium or light weapons and high Speed. Their decent rounded stats make them the best general purpose fighters and an essential parts of any adventuring party, since few can match the consistent damage dealt by a well equipped, and motivated, soldier.
 
 \subsubsection*{Characteristics}
 \label{subsub:soldierCharacteristics}
+
 Most soldiers come to the profession after receiving some amount of formal training from a military organization, local militia, or private army. Some attend formal academies; others are self-taunt and well tested. A soldier may have taken up their weapon to escape a mundane life, protect a proud family traditions, or to fulfill their oath and uphold their honour. Soldiers in a particular unit share a certain camaraderie, but most have nothing in common except battle prowess and the desire to apply it to a given situation. \par
 
 \itemLine{Individual Role} {Soldiers are physical, action-oriented people. They're more likely to overcome a challenge using hard word and perseverance as apposed to cheap tricks; they often take the most direct path towards their goal.}
+
 \itemLine{Group Role} {Soldiers usually take and deal the most punishment in a dangerous situation. Often it falls on them to protect the other group members from threats. This sometimes means that Soldiers take on leadership roles as well, at least during combat.}
+
 \itemLine{Societal Role} {In most cities and villages, people hold soldiers in great esteem. Although a soldier could just as likely be a thug as a noble warrior, those who help protect their fellow sentient from the dangers of apposing forces are always treated respect; or controlled by fear. There is no shame in getting paid for the use of one’s skills, so being a blade for hire is a perfectly acceptable profession.}
+
 \itemLine{Advanced Soldiers} {As soldiers advance, their skill in battle--whether defending themselves or dishing out damage--increases to impressive levels. At higher tiers, they can often take on groups of foes by themselves or stand toe-to-toe with anyone.}
 
 \statPool{Soldier}{10}{10}{8}{6}
 
 \subsubsection*{Examples of Soldiers}
 \label{subsub:soldierExamples}
+
 Admiral Ackbar, Admiral Carth Onasi, Mandalore the Preserver (Canderous Ordo), Poe Dameron, Clone Captain Rex, Wedge Antilles, Saul Karath, Brianna the Last Handmaiden, Garazeb "Zeb" Orrelios.
 
 \subsubsection*{Alternative titles}
 \label{subsub:soldierAlternative}
-Guard, bodyguard, enforcer, trooper, adventurer, warrior, mercenary.
+
+Guard, Bodyguard, Enforcer, Trooper, Warrior, Mercenary.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{First-Tier Soldier}
 \label{subsub:soldierFirstTier}
-First-tier soldiers have the following abilities: \par
-\itemLine{Effort} {Your Effort is 1.} 
+
+First-tier soldiers have the following abilities:
+
+\itemLine{Effort} {Your Effort is 1.}
+
 \itemLine{Physical Nature} {You have a Might Edge
 of 1 and a Speed Edge of 0, or you have a
 Might Edge of 0 and a Speed Edge of 1.
 Either way, you have an Intellect Edge of 0.}
+
 \itemLine{Cypher Use} {You can bear two cyphers at a time.}
+
 \itemLine{All weapon proficiency} {You can use any non-Lightsaber weapon.\enabler}
+
 \itemLine{Starting Equipment} {Appropriate clothing, two weapons of your choice, one expensive item, two moderately priced items, and up to four inexpensive items}
-\itemLine{Special Abilities} {Pick four from the abilities described below. Some
-special abilities are constant, ongoing effects, and
-others are specific actions that usually cost points
-from one of your stat Pools. You cannot choose the same ability more than once unless specified otherwise.}
-\itemAbility{Bash (1 Might point)} {This is a pummeling
-melee attack. Your attack inflicts 1 less point
-of damage than normal, but dazes your
-target for one round, during which time the
-difficulty of all tasks it performs is modified
-by one step to its detriment.\action}
-\itemAbility{Control the Field (1 Might point)} {This
-melee attack inflicts 1 less point of damage
-than normal, but regardless of whether
-you hit the target, you maneuver it into a
-position you desire within immediate range.\action}
-\itemAbility{Extra Edge} {Your physical nature grants
-you an Edge of 1 in both Speed and Might,
-rather than one or the other.}
-\itemAbility{Unarmed Fighter} {When you make
-an unarmed attack (such as a punch or
-kick), it counts as a medium weapon
-instead of a light weapon.\enabler}
-\itemAbility{Overwatch (1 Intellect point)} {You use
-a ranged weapon to target a limited area
-(such as a doorway, a hallway) and make an attack
-against the next viable target to enter that
-area. This works like a wait action, but you
-also negate any benefit the target would
-have from cover, position, surprise, range,
-illumination, or visibility. Further, you inflict
-1 additional point of damage with the attack.
-You can remain on Overwatch as long as you
-wish, within reason.\action}
-\itemAbility{Physical Skill Training}{You are trained in two
-skills in which you are not already trained.
-Choose two of the following: \textit{climb, running, jump, swim, treat-injury,} or similiar physical skills.
-You can select this ability multiple times.
-Each time you select it, you must choose
-two different skills.\enabler} 
-\itemAbility{Pierce (1 Speed point)}{This is a well-aimed,
-penetrating ranged attack. You make
-an attack and inflict 1 additional point of
-damage if your weapon has a sharp or energy-based point.\action}
-\itemAbility{Armor Proficiency}{You can wear armor
-for long periods of time without tiring
-and can compensate for slowed reactions
-from wearing armor. You can wear any kind
-of armor. You reduce the Speed cost for
-wearing armor by 1. You start the game with
-a type of armor of your choice.\enabler}
-\itemAbility{Tomahawk Toss (2 Speed points)}{After using
-a thrown light weapon, you draw another
-light weapon and make another thrown
-attack against the same target or a different
-one.\action}
-\itemAbility{Weakening Strike (1 Speed point)}{This is a quick,
-agile melee attack. Your attack inflicts 1 less
-point of damage than normal but dazes
-your target for one round, during which
-time the difficulty of all tasks it performs
-is modified by one step to its detriment.\action}
-\itemAbility{Thrust (1 Might point)}{This is a powerful
-melee stab. You make an attack and inflict 1
-additional point of damage if your weapon
-has a sharp edge or point.\action}
-\itemAbility{Dexterous Defense}{You are trained
-in Speed defense actions when not wearing
-armor.\enabler}
+
+\itemLine{Special Abilities} {Pick four from the abilities described below. Some special abilities are constant, ongoing effects, and others are specific actions that usually cost points from one of your stat Pools. You cannot choose the same ability more than once unless specified otherwise.}
+
+\itemAbility{Bash (1 Might point)} {This is a pummeling melee attack. Your attack inflicts 1 less point of damage than normal, but dazes your target for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.\action}
+
+\itemAbility{Control the Field (1 Might point)} {This melee attack inflicts 1 less point of damage than normal, but regardless of whether you hit the target, you maneuver it into a position you desire within immediate range.\action}
+
+\itemAbility{Extra Edge} {Your physical nature grants you an Edge of 1 in both Speed and Might, rather than one or the other.}
+
+\itemAbility{Unarmed Fighter} {When you make an unarmed attack (such as a punch or kick), it counts as a medium weapon instead of a light weapon.\enabler}
+
+\itemAbility{Overwatch (1 Intellect point)} {You use a ranged weapon to target a limited area (such as a doorway, a hallway) and make an attack against the next viable target to enter that area. This works like a wait action, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Further, you inflict 1 additional point of damage with the attack. You can remain on Overwatch as long as you wish, within reason.\action}
+
+\itemAbility{Physical Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{climb, running, jump, swim, treat-injury,} or similiar physical skills. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
+
+\itemAbility{Pierce (1 Speed point)}{This is a well-aimed, penetrating ranged attack. You make an attack and inflict 1 additional point of damage if your weapon has a sharp or energy-based point.\action}
+
+\itemAbility{Armor Proficiency}{You can wear armor for long periods of time without tiring and can compensate for slowed reactions from wearing armor. You can wear any kind of armor. You reduce the Speed cost for wearing armor by 1. You start the game with a type of armor of your choice.\enabler}
+
+\itemAbility{Tomahawk Toss (2 Speed points)}{After using a thrown light weapon, you draw another light weapon and make another thrown attack against the same target or a different one.\action}
+
+\itemAbility{Weakening Strike (1 Speed point)}{This is a quick, agile melee attack. Your attack inflicts 1 less point of damage than normal but dazes your target for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.\action}
+
+\itemAbility{Thrust (1 Might point)}{This is a powerful melee stab. You make an attack and inflict 1 additional point of damage if your weapon has a sharp edge or point.\action}
+
+\itemAbility{Dexterous Defense}{You are trained in Speed defense actions when not wearing armor.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Second-Tier Soldier}
 \label{subsub:soldierSecondTier}
-Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
-\itemAbility{Power Strike (2 Might points)}{This is a heavy,
-powerful slice with a bladed weapon,
-probably overhand. You must grip your
-weapon with two hands to chop. When
-making this attack, you take a –1 penalty to
-the attack roll, and you inflict 3 additional
-points of damage.\action}
-\itemAbility{Crush (2 Might points)}{This is a powerful
-pummeling attack with a bashing weapon,
-probably overhand. You must grip your
-weapon with two hands to crush. (If fighting
-unarmed, this attack is made with both fists
-or both feet together.) When making this
-attack, you take a –1 penalty to the attack
-roll, and you inflict 3 additional points of
-damage.\action}
-\itemAbility{Mighty Blow (2 Might points)}{You strike
-two foes with a single blow. Make separate
-attack rolls for each foe, but both attacks
-count as a single action in a single round.
-You remain limited by the amount of Effort
-you can apply on one action. Anything that
-modifies your attack or damage applies to
-both of these attacks.\action}
-\itemAbility{Reload (1 Speed point)}{When using a
-weapon that normally requires an action to
-reload, such as a heavy blaster rifle, you can
-reload and fire (or fire and reload) in the
-same action.\enabler}
-\itemAbility{Weapon Training}{Choose one type of
-attack in which you are not already trained:
-\textit{light bashing, light bladed, light ranged,
-medium bashing, medium bladed, medium
-ranged, heavy bashing, heavy bladed, 
-heavy ranged}. You are trained in attacks
-using that type of weapon. You can select
-this ability multiple times. Each time you
-select it, you must choose a different type of
-attack.\enabler}
-\itemAbility{Defense Training}{Choose one type of
-defense task in which you are not already
-trained: \textit{Might, Speed, Intellect.} You are
-trained in \emph{defense tasks} of that type. You
-can select this ability up to three times.
-Each time you select it, you must choose a
-different type of defense task.\enabler}
-\itemAbility{Kill Zone (2 Speed points)}{If you
-take down a foe, you can immediately make
-another attack on that same turn against
-a new foe within your reach. The second
-attack is part of the same action. You can
-use this ability with melee attacks and
-ranged attacks.\enabler}
+
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
+
+\itemAbility{Power Strike (2 Might points)}{This is a heavy, powerful slice with a bladed weapon, probably overhand. You must grip your weapon with two hands to chop. When making this attack, you take a –1 penalty to the attack roll, and you inflict 3 additional points of damage.\action}
+
+\itemAbility{Crush (2 Might points)}{This is a powerful pummeling attack with a bashing weapon, probably overhand. You must grip your weapon with two hands to crush. (If fighting unarmed, this attack is made with both fists or both feet together.) When making this attack, you take a –1 penalty to the attack roll, and you inflict 3 additional points of damage.\action}
+
+\itemAbility{Mighty Blow (2 Might points)}{You strike two foes with a single blow. Make separate attack rolls for each foe, but both attacks count as a single action in a single round. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to both of these attacks.\action}
+
+\itemAbility{Reload (1 Speed point)}{When using a weapon that normally requires an action to reload, such as a heavy blaster rifle, you can reload and fire (or fire and reload) in the same action.\enabler}
+
+\itemAbility{Weapon Training}{Choose one type of attack in which you are not already trained: \textit{light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing, heavy bladed, heavy ranged}. You are trained in attacks using that type of weapon. You can select this ability multiple times. Each time you select it, you must choose a different type of attack.\enabler}
+
+\itemAbility{Defense Training}{Choose one type of defense task in which you are not already trained: \textit{Might, Speed, Intellect.} You are trained in \emph{defense tasks} of that type. You can select this ability up to three times. Each time you select it, you must choose a different type of defense task.\enabler}
+
+\itemAbility{Kill Zone (2 Speed points)}{If you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach. The second attack is part of the same action. You can use this ability with melee attacks and ranged attacks.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Third-Tier Soldier}
 \label{subsub:soldierThirdTier}
-Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
-\itemAbility{Deadly Aim (3 Speed points)}{For the next
-minute, all ranged attacks you make inflict
-2 additional points of damage.\actionInit}
-\itemAbility{Armor Expertise}{The cost
-reduction from your Armor Proficiency
-ability improves. You now reduce the Speed
-cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
-\itemAbility{Expert Cypher Use}{You can bear three
-cyphers at a time.\enabler}
-\itemAbility{Reaper (3 Might points)}{For the next
-minute, all melee attacks you make inflict
-2 additional points of damage.\actionInit}
-\itemAbility{Lunge (2 Might points)}{This ability
-requires you to extend yourself for a powerful
-stab or smash. The awkward lunge increases
-the difficulty of the attack roll by one step.
-If your attack is successful, it inflicts 4
-additional points of damage.\action}
-\itemAbility{Close Combat Specialist}{If a creature you attacked on
-your last turn with a melee attack uses its
-action to move out of immediate range, you
-gain an action to attack the creature as a
-parting blow, even if you have already taken
-a turn in the round.\enabler}
-\itemAbility{Seize the Moment (4+ Speed points)}{If you succeed on a Speed defense roll to
-resist an attack, you gain an action. You can
-use the action immediately even if you have
-already taken a turn in the round. You don’t
-take an action during the next round, unless
-you apply a level of Effort when you use
-Seize the Moment.\enabler}
-\itemAbility{Slice 'n Dice (2 Speed points)}{This is a quick
-attack with a bladed or pointed weapon that
-is hard to defend against. The difficulty of
-the attack roll is decreased by one step. If
-the attack is successful, it deals 1 less point
-of damage than normal.\action}
-\itemAbility{Rapid Fire (2 Speed points)}{If a weapon
-has the ability to fire rapid shots without
-reloading (usually called a rapid-fire
-weapon, such as a repeater blaster), you
-can spray multiple shots around your target
-to increase the chance of hitting. This ability
-uses 1d6 + 1 rounds of ammo (or all the
-ammo in the weapon, if it has less than the
-number rolled). The difficulty of the attack
-roll is decreased by one step. If the attack is
-successful, it deals 1 less point of damage
-than normal.\action}
-\itemAbility{Double Tap (2 Speed points)}{As part
-of the same action, you make a ranged attack against two targets that are within
-immediate range of each other. Make a
-separate attack roll against each target. The
-difficulty of each attack roll is increased by
-one step.\action}
+
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
+
+\itemAbility{Deadly Aim (3 Speed points)}{For the next minute, all ranged attacks you make inflict 2 additional points of damage.\actionInit}
+
+\itemAbility{Armor Expertise}{The cost reduction from your Armor Proficiency ability improves. You now reduce the Speed cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
+
+\itemAbility{Expert Cypher Use}{You can bear three cyphers at a time.\enabler}
+
+\itemAbility{Reaper (3 Might points)}{For the next minute, all melee attacks you make inflict 2 additional points of damage.\actionInit}
+
+\itemAbility{Lunge (2 Might points)}{This ability requires you to extend yourself for a powerful stab or smash. The awkward lunge increases the difficulty of the attack roll by one step. If your attack is successful, it inflicts 4 additional points of damage.\action}
+
+\itemAbility{Close Combat Specialist}{If a creature you attacked on your last turn with a melee attack uses its action to move out of immediate range, you gain an action to attack the creature as a parting blow, even if you have already taken a turn in the round.\enabler}
+
+\itemAbility{Seize the Moment (4+ Speed points)}{If you succeed on a Speed defense roll to resist an attack, you gain an action. You can use the action immediately even if you have already taken a turn in the round. You don’t take an action during the next round, unless you apply a level of Effort when you use Seize the Moment.\enabler}
+
+\itemAbility{Slice 'n Dice (2 Speed points)}{This is a quick attack with a bladed or pointed weapon that is hard to defend against. The difficulty of the attack roll is decreased by one step. If the attack is successful, it deals 1 less point of damage than normal.\action}
+
+\itemAbility{Rapid Fire (2 Speed points)}{If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a repeater blaster), you can spray multiple shots around your target to increase the chance of hitting. This ability uses 1d6 + 1 rounds of ammo (or all the ammo in the weapon, if it has less than the number rolled). The difficulty of the attack roll is decreased by one step. If the attack is successful, it deals 1 less point of damage than normal.\action}
+
+\itemAbility{Double Tap (2 Speed points)}{As part of the same action, you make a ranged attack against two targets that are within immediate range of each other. Make a separate attack roll against each target. The difficulty of each attack roll is increased by one step.\action}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Fourth-Tier Soldier}
 \label{subsub:soldierFourthTier}
-Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
-\itemAbility{Stopping Power}{Your attacks deal 1
-additional point of damage.\enabler}
-\itemAbility{Armourologist}{When wearing
-armor, you gain +1 to Armor.\enabler}
-\itemAbility{Deceptive Strike (2 Speed points)}{If you spend one
-action creating a misdirection or diversion,
-in the next round you can take advantage
-of your opponent’s lowered defenses. Make
-a melee attack roll against that opponent.
-The difficulty of the roll is decreased by one
-step. If your attack is successful, it inflicts 4
-additional points of damage.\action}
-\itemAbility{Keen Fighter}{You treat rolls of natural
-19 as rolls of natural 20 for Might attack
-rolls or Speed attack rolls (your choice when
-you gain this ability). This allows you to gain
-a major effect on a natural 19 or 20.\enabler}
-\itemAbility{Momentum}{If you use an action to
-move, your next attack made using a melee
-weapon before the end of the next round
-inflicts 2 additional points of damage.\enabler}
-\itemAbility{Opening Gambit (4 Might points)}{Your
-melee attack shreds the defenses of a
-target. Any energy-based defenses it has
-(such as a force field) are
-negated for 1d6 + 1 rounds. If the target
-has no energy-based defenses, its Armor
-is reduced by 2 for one minute. If it has
-no energy-based defenses or Armor, the
-difficulty of all attacks made against the
-target is lowered by one step for one
-minute. Lightsabers are affected for 2 turns only.\action}
-\itemAbility{Sniping Shot (2 Speed points)}{If you spend one
-action aiming, in the next round you can
-make a precise ranged attack. The difficulty
-of the attack roll is decreased by one step.
-If your attack is successful, it inflicts 4
-additional points of damage.\action}
-\itemAbility{Tough As Nails}{When you are impaired
-or debilitated on the damage track, the
-difficulty of Might-based tasks and defense rolls you attempt is decreased by one step.
-If you also have Pain Reduction, make a
-difficulty 1 Might defense roll when you
-reach 0 points in all three of your Pools
-to immediately regain 1 Might point and
-avoid dying. Each time you attempt to
-save yourself with this ability before your
-next ten-hour recovery roll, the difficulty
-increases by one step.\enabler}
+
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
+
+\itemAbility{Stopping Power}{Your attacks deal 1 additional point of damage.\enabler}
+
+\itemAbility{Armourologist}{When wearing armor, you gain +1 to Armor.\enabler}
+
+\itemAbility{Deceptive Strike (2 Speed points)}{If you spend one action creating a misdirection or diversion, in the next round you can take advantage of your opponent’s lowered defenses. Make a melee attack roll against that opponent. The difficulty of the roll is decreased by one step. If your attack is successful, it inflicts 4 additional points of damage.\action}
+
+\itemAbility{Keen Fighter}{You treat rolls of natural 19 as rolls of natural 20 for Might attack rolls or Speed attack rolls (your choice when you gain this ability). This allows you to gain a major effect on a natural 19 or 20.\enabler}
+
+\itemAbility{Momentum}{If you use an action to move, your next attack made using a melee weapon before the end of the next round inflicts 2 additional points of damage.\enabler}
+
+\itemAbility{Opening Gambit (4 Might points)}{Your melee attack shreds the defenses of a target. Any energy-based defenses it has (such as a force field) are negated for 1d6 + 1 rounds. If the target has no energy-based defenses, its Armor is reduced by 2 for one minute. If it has no energy-based defenses or Armor, the difficulty of all attacks made against the target is lowered by one step for one minute. Lightsabers are affected for 2 turns only.\action}
+
+\itemAbility{Sniping Shot (2 Speed points)}{If you spend one action aiming, in the next round you can make a precise ranged attack. The difficulty of the attack roll is decreased by one step. If your attack is successful, it inflicts 4 additional points of damage.\action}
+
+\itemAbility{Tough As Nails}{When you are impaired or debilitated on the damage track, the difficulty of Might-based tasks and defense rolls you attempt is decreased by one step. If you also have Pain Reduction, make a difficulty 1 Might defense roll when you reach 0 points in all three of your Pools to immediately regain 1 Might point and avoid dying. Each time you attempt to save yourself with this ability before your next ten-hour recovery roll, the difficulty increases by one step.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Fifth-Tier Soldier}
 \label{subsub:soldierFifthTier}
-Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
-\itemAbility{Adroit Cypher Use}{You can bear four
-cyphers at a time.\enabler}
-\itemAbility{Arc Spray (3 Speed points)}{If a weapon
-has the ability to fire rapid shots without
-reloading (usually called a rapid-fire
-weapon, such as a repeater blaster), you
-can fire your weapon at up to three targets
-(all next to one another) at once. Make a
-separate attack roll against each target. The
-difficulty of each attack is increased by one
-step.\action}
-\itemAbility{Attack Mastery}{Choose one
-type of attack, even one in which you are
-already trained: \textit{light bashing, light bladed,
-light ranged, medium bashing, medium
-bladed, medium ranged, heavy bashing,
-heavy bladed, heavy ranged.} You are
-trained in attacks using that type of weapon.
-If you’re already trained in that type of
-attack, you instead are specialized in that
-type of attack.\enabler}
-\itemAbility{Improved Success}{When you roll a 17 or
-higher on an attack roll that deals damage,
-you deal 1 additional point of damage. For
-instance, if you roll a natural 18, which
-normally deals 2 extra points of damage,
-you deal 3 extra points instead. If you roll
-a natural 20 and choose to deal damage
-instead of achieve a special major effect,
-you deal 5 extra points of damage.\enabler}
-\itemAbility{Hi-Jump Attack (5 Might points)}{You attempt
-a difficulty 4 Might action to jump high into
-the air as part of your melee attack. If you
-succeed, your attack inflicts 3 additional
-points of damage and knocks the foe down.
-If you fail, you still make your normal attack
-roll, but you don’t inflict the extra damage or
-knock down the opponent if you hit.\action}
-\itemAbility{Armor Mastery}{The cost reduction
-from your Armor Proficiency ability
-improves. When you wear any armor, you
-reduce the armor’s Speed cost to 0. If you
-select this ability and you already have the
-Armor Expertise ability, replace
-Armor Expertise with a different
-third-tier ability because Armor Mastery is better.
-\textit{Must have Armor Proficiency} to benefit from this ability.\enabler}
-\itemAbility{Defense Mastery}{Choose one
-type of defense task in which you are
-trained: \textit{Might, Speed, Intellect}. You are
-specialized in defense tasks of that type.
-You can select this ability up to three times.
-Each time you select it, you must choose a
-different type of defense task.\enabler}
-\itemAbility{Parry (5 Speed points)}{You can deflect
-incoming attacks quickly. For the next ten
-rounds, the difficulty of all Speed defense
-rolls is reduced by one step.\enabler}
+
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
+
+\itemAbility{Adroit Cypher Use}{You can bear four cyphers at a time.\enabler}
+
+\itemAbility{Arc Spray (3 Speed points)}{If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a repeater blaster), you can fire your weapon at up to three targets (all next to one another) at once. Make a separate attack roll against each target. The difficulty of each attack is increased by one step.\action}
+
+\itemAbility{Attack Mastery}{Choose one type of attack, even one in which you are already trained: \textit{light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing, heavy bladed, heavy ranged.} You are trained in attacks using that type of weapon. If you’re already trained in that type of attack, you instead are specialized in that type of attack.\enabler}
+
+\itemAbility{Improved Success}{When you roll a 17 or higher on an attack roll that deals damage, you deal 1 additional point of damage. For instance, if you roll a natural 18, which normally deals 2 extra points of damage, you deal 3 extra points instead. If you roll a natural 20 and choose to deal damage instead of achieve a special major effect, you deal 5 extra points of damage.\enabler}
+
+\itemAbility{Hi-Jump Attack (5 Might points)}{You attempt a difficulty 4 Might action to jump high into the air as part of your melee attack. If you succeed, your attack inflicts 3 additional points of damage and knocks the foe down. If you fail, you still make your normal attack roll, but you don’t inflict the extra damage or knock down the opponent if you hit.\action}
+
+\itemAbility{Armor Mastery}{The cost reduction from your Armor Proficiency ability improves. When you wear any armor, you reduce the armor’s Speed cost to 0. If you select this ability and you already have the Armor Expertise ability, replace Armor Expertise with a different third-tier ability because Armor Mastery is better. \textit{Must have Armor Proficiency} to benefit from this ability.\enabler}
+
+\itemAbility{Defense Mastery}{Choose one type of defense task in which you are trained: \textit{Might, Speed, Intellect}. You are specialized in defense tasks of that type. You can select this ability up to three times. Each time you select it, you must choose a different type of defense task.\enabler}
+
+\itemAbility{Parry (5 Speed points)}{You can deflect incoming attacks quickly. For the next ten rounds, the difficulty of all Speed defense rolls is reduced by one step.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLDIER TIER 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Sixth-Tier Soldier}
 \label{subsub:soldierSixthTier}
-Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
-\itemAbility{Coup de Grace (5 Might points)}{If your
-foe is prone, stunned, or somehow helpless
-or incapacitated when you strike, you
-inflict 8 additional points of damage on a
-successful hit.\enabler}
-\itemAbility{Magnificent Moment}{If you make an
-attack or attempt a task with the immediate
-action you gain by using Seize the Moment,
-the difficulty is reduced by one step.\enabler}
-\itemAbility{High Noon (5 Speed points)}{You
-stand still and make ranged attacks against
-up to five foes within range, all as part
-of the same action in one round. Make a
-separate attack roll for each foe. You remain
-limited by the amount of Effort you can
-apply on one action. Anything that modifies
-your attack or damage applies to all of these
-attacks.\action}
-\itemAbility{Slayer (3 Might points)}{When you
-successfully strike a foe of level 5 or lower,
-make another roll (using whichever stat
-you used to attack). If you succeed on the
-second roll, you kill the target outright. If
-you use this ability against a PC of any tier
-and you succeed on the second roll, the
-character moves down one step on the
-damage track.\enabler}
-\itemAbility{Blade Storm (5 Speed points)}{You stand
-still and make melee attacks against up
-to five foes within reach, all as part of the
-same action in one round. Make a separate
-attack roll for each foe. You remain limited
-by the amount of Effort you can apply on
-one action. Anything that modifies your
-attack or damage applies to all of these
-attacks.\action}
-\itemAbility{Weapon and Body (5 Speed points)}{After making a melee weapon or ranged
-weapon attack, you follow up with a punch
-or kick as an additional attack, all as part
-of the same action in one round. The two
-attacks can be directed at different foes. Make a separate attack roll for each attack.
-You remain limited by the amount of Effort
-you can apply on one action. Anything that
-modifies your attack or damage applies to
-both attacks, unless it is tied specifically to
-your weapon.\action}
+
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
+
+\itemAbility{Coup de Grace (5 Might points)}{If your foe is prone, stunned, or somehow helpless or incapacitated when you strike, you inflict 8 additional points of damage on a successful hit.\enabler}
+
+\itemAbility{Magnificent Moment}{If you make an attack or attempt a task with the immediate action you gain by using Seize the Moment, the difficulty is reduced by one step.\enabler}
+
+\itemAbility{High Noon (5 Speed points)}{You stand still and make ranged attacks against up to five foes within range, all as part of the same action in one round. Make a separate attack roll for each foe. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to all of these attacks.\action}
+
+\itemAbility{Slayer (3 Might points)}{When you successfully strike a foe of level 5 or lower, make another roll (using whichever stat you used to attack). If you succeed on the second roll, you kill the target outright. If you use this ability against a PC of any tier and you succeed on the second roll, the character moves down one step on the damage track.\enabler}
+
+\itemAbility{Blade Storm (5 Speed points)}{You stand still and make melee attacks against up to five foes within reach, all as part of the same action in one round. Make a separate attack roll for each foe. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to all of these attacks.\action}
+
+\itemAbility{Weapon and Body (5 Speed points)}{After making a melee weapon or ranged weapon attack, you follow up with a punch or kick as an additional attack, all as part of the same action in one round. The two attacks can be directed at different foes. Make a separate attack roll for each attack. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to both attacks, unless it is tied specifically to your weapon.\action}
+
+\newpage
+
 % subsection* soldier (end)
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Scout} % (fold)
 \label{sub:scout}
-Scouts are natural explorers and adventurers, full of curiosity and trained to handle out-of-the-way locations where they often operate. Scouts tend to be independent, signing on when the credits are good and their skills are best utilized and tested. Scouts understand the lay of the land and the orbit of the stars. They know how to recognize danger and locate basic necessities for survival. The scout seeks knowledge, tries to solve mysteries, and wants to be the first to see something new. The scout learns to find a path through the wild regions, often becoming a decent pilot along the way, and usually learns how to protect themselves from whatever hides over the next hill or beyond the most distant nebula. \par
+
+Scouts are natural explorers and adventurers, full of curiosity and trained to handle out-of-the-way locations where they often operate. Scouts tend to be independent, signing on when the credits are good and their skills are best utilized and tested. Scouts understand the lay of the land and the orbit of the stars. They know how to recognize danger and locate basic necessities for survival. The scout seeks knowledge, tries to solve mysteries, and wants to be the first to see something new. The scout learns to find a path through the wild regions, often becoming a decent pilot along the way, and usually learns how to protect themselves from whatever hides over the next hill or beyond the most distant nebula.
 
 Scouts temper insatiable curiosity with excellent survival instincts. They make use of Speed and personal experience to spot and avoid dangers. The scout has an undying faith in themselves and their abilities that sometimes allows the scout to call upon reserves and inner strength to get out of tough situations. Scouts like to be the first to reach any location, although they also want to reach it in one piece. They can be gruff or silent, jovial or talkative. They are confident and brave, and they often appreciate the wonders that the galaxy has to offer.
 
 \subsubsection*{Characteristics}
 \label{subsub:scoutCharacteristics}
-Scouts come to their profession in search of something, usually knowledge or secrets or answers to the mysteries of the ages. Scholars, while possibly associated with and institute of learning or particular government, often forsake the halls of academia for the pure research of working in the field. Pathfinders and explorers may work for a government or military institutions, or freelance contracts from anyone willing to pay for their services. Many scouts develop into bounty hunters, especially those who combine military skills with their tracking and searching abilities. Every group of adventurers benefit from having a scout in the party.\par
+
+Scouts come to their profession in search of something, usually knowledge or secrets or answers to the mysteries of the ages. Scholars, while possibly associated with and institute of learning or particular government, often forsake the halls of academia for the pure research of working in the field. Pathfinders and explorers may work for a government or military institutions, or freelance contracts from anyone willing to pay for their services. Many scouts develop into bounty hunters, especially those who combine military skills with their tracking and searching abilities. Every group of adventurers benefit from having a scout in the party.
 
 \itemLine{Individual Role} {Although scouts can be academics or well studied, they are first and foremost interested in action. They face grave dangers and terrible obstacles as a routine part of life.}
-\itemLine{Group Role} {Scouts sometimes work
-alone, but far more often they operate in teams
-with other characters. The scout frequently
-leads the way, blazing the trail. However, they
-also likely to stop and investigate anything
-intriguing they stumble upon.}
-\itemLine{Societal Role} {Scouts are remarkable in
-that they can do so many different
-things, and some do multiple
-things. Skilled and learned scouts
-who share their achievements with
-others are prized members
-of society, well respected for
-what they know and can do.}
-\itemLine{Advanced Scouts} {Higher-tier scouts
-gain more skills, some combat abilities, and
-a number of abilities that allow them to deal
-with danger. In short, they become more
-and more well-rounded, able to deal with
-any challenge.}
 
-\statPool{Scout}{10}{9}{9}{6}
+\itemLine{Group Role} {Scouts sometimes work alone, but far more often they operate in teams with other characters. The scout frequently leads the way, blazing the trail. However, they also likely to stop and investigate anything intriguing they stumble upon.}
+
+\itemLine{Societal Role} {Scouts are remarkable in that they can do so many different things, and some do multiple things. Skilled and learned scouts who share their achievements with others are prized members of society, well respected for what they know and can do.}
+
+\itemLine{Advanced Scouts} {Higher-tier scouts gain more skills, some combat abilities, and a number of abilities that allow them to deal with danger. In short, they become more and more well-rounded, able to deal with any challenge.}
+
+\statPool{Scout}{9}{10}{9}{6}
 
 \subsubsection*{Examples of Scouts}
 \label{subsub:scoutExamples}
+
 Chewbacca, Boba Fett, Sabine Wren, Mission Vao, Cad Bane, Hanharr.
 
 \subsubsection*{Alternative titles}
 \label{subsub:scoutAlternative}
-Ranger, outrider, hunter, explorer, guide, scholar, vanguard.
+
+Ranger, Outrider, Hunter, Explorer, Guide, Scholar, Vanguard.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{First-Tier Scout}
 \label{subsub:scoutFirstTier}
-First-tier scouts have the following abilities: \par
-\itemLine{Effort}{Your Effort is 1.} 
-\itemLine{Physical Nature} {You have a Might Edge
-of 0, a Speed Edge of 1, and an Intellect Edge of 0.}
+
+First-tier scouts have the following abilities:
+
+\itemLine{Effort}{Your Effort is 1.}
+
+\itemLine{Physical Nature} {You have a Might Edge of 0, a Speed Edge of 1, and an Intellect Edge of 0.}
+
 \itemLine{Cypher Use}{You can bear two cyphers at a time.}
-\itemLine{Light \& Medium weapon proficiency} {You can use light and medium
-weapons without penalty. If you wield a
-heavy weapon, increase the difficulty of the
-attack by one step.\enabler}
-\itemLine{Starting Equipment}{Appropriate clothing
-and a weapon of your choice, plus two
-expensive items, two moderately priced
-items, and up to four inexpensive items.}
-\itemLine{Special Abilities}{Choose four of the
-abilities described below. You can’t choose
-the same ability more than once unless its
-description says otherwise.}
-\itemAbility{Block (3 Speed points)}{You automatically
-block the next melee attack made against
-you within the next minute.\actionInit}
-\itemAbility{Danger Sense (1 Speed point)}{The
-difficulty of your initiative roll is reduced by
-one step.\enabler}
-\itemAbility{Decipher (1 Intellect point)}{If you spend
-one minute examining a piece of writing or
-code in a language you do not understand,
-you can make an Intellect roll of difficulty
-3 (or higher, based on the complexity of
-the language or code) to get the gist of the
-message.\actionInit}
-\itemAbility{Physical Conditioning}{Any duration dealing with
-physical actions is either doubled or halved,
-whichever is better for you. For example,
-if the typical person can hold his breath
-for thirty seconds, you can hold it for one minute. 
-If the typical person can march
-for four hours without stopping, you can
-do so for eight hours. In terms of harmful
-effects, if a poison paralyzes its victims for
-one minute, you are paralyzed for thirty
-seconds. The minimum duration is always
-one round.\enabler}
-\itemAbility{Extra Edge}{You have a Might Edge of 1
-and a Speed Edge of 1.}
-\itemAbility{Fleet of Foot}{If you succeed at a difficulty
-2 Speed roll to run, you can move a short
-distance and take an action in the same
-round.\enabler}
-\itemAbility{Knowledge Skill Training}{You are trained in two
-skills in which you are not already trained.
-Choose two of the following: \textit{astrology, architecture, computer-use, mechanics,} a particular \textit{history} of something, or a similar knowledge based skill. 
-You can select this ability multiple times. Each time you select it, you
-must choose two different skills.\enabler}
-\itemAbility{Muscles of Iron (2 Might points)}{For the
-next ten minutes, the difficulty of all Might-based
-actions other than attack rolls that
-you attempt is reduced by one step.\enabler}
-\itemAbility{Unarmed Specialist}{When you make
-an unarmed attack (such as a punch
-or kick), you can choose whether it is considered a medium weapon or a light
-weapon. Enabler.\enabler}
-\itemAbility{Physical Skill Training}{You are trained in two
-skills in which you are not already trained.
-Choose two of the following: \textit{climb, running, jump, swim, treat-injury,} or similiar physical skills.
-You can select this ability multiple times.
-Each time you select it, you must choose
-two different skills.\enabler} 
-\itemAbility{Armor Proficiency}{You can wear armor
-for long periods of time without tiring
-and can compensate for slowed reactions
-from wearing armor. You can wear any kind
-of armor. You reduce the Speed cost for
-wearing armor by 1. You start the game with
-a type of armor of your choice.\enabler}
-\itemAbility{Surging Confidence (1 Might point)}{When you use an action to make your first
-recovery roll of the day, you immediately
-gain another action.\enabler}
-\itemAbility{Dexterous Defense}{You are trained
-in Speed defense actions when not wearing
-armor.\enabler}
+
+\itemLine{Light \& Medium Weapon Proficiency} {You can use light and medium weapons without penalty. If you wield a heavy weapon, increase the difficulty of the attack by one step.\enabler}
+
+\itemLine{Starting Equipment}{Appropriate clothing and a weapon of your choice, plus two expensive items, two moderately priced items, and up to four inexpensive items.}
+
+\itemLine{Special Abilities}{Choose four of the abilities described below. You can’t choose the same ability more than once unless its description says otherwise.}
+
+\itemAbility{Block (3 Speed points)}{You automatically block the next melee attack made against you within the next minute.\actionInit}
+
+\itemAbility{Danger Sense (1 Speed point)}{The difficulty of your initiative roll is reduced by one step.\enabler}
+
+\itemAbility{Decipher (1 Intellect point)}{If you spend one minute examining a piece of writing or code in a language you do not understand, you can make an Intellect roll of difficulty 3 (or higher, based on the complexity of the language or code) to get the gist of the message.\actionInit}
+
+\itemAbility{Physical Conditioning}{Any duration dealing with physical actions is either doubled or halved, whichever is better for you. For example, if the typical person can hold his breath for thirty seconds, you can hold it for one minute. If the typical person can march for four hours without stopping, you can do so for eight hours. In terms of harmful effects, if a poison paralyzes its victims for one minute, you are paralyzed for thirty seconds. The minimum duration is always one round.\enabler} \itemAbility{Extra Edge}{You have a Might Edge of 1 and a Speed Edge of 1.}
+
+\itemAbility{Fleet of Foot}{If you succeed at a difficulty 2 Speed roll to run, you can move a short distance and take an action in the same round.\enabler}
+
+\itemAbility{Knowledge Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{astrology, architecture, computer-use, mechanics}, a particular \textit{history} of something, or a similar knowledge based skill. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
+
+\itemAbility{Muscles of Iron (2 Might points)}{For the next ten minutes, the difficulty of all Might-based actions other than attack rolls that you attempt is reduced by one step.\enabler}
+
+\itemAbility{Unarmed Specialist}{When you make an unarmed attack (such as a punch or kick), you can choose whether it is considered a medium weapon or a light weapon. Enabler.\enabler}
+
+\itemAbility{Physical Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{climb, running, jump, swim, treat-injury,} or similiar physical skills. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
+
+\itemAbility{Armor Proficiency}{You can wear armor for long periods of time without tiring and can compensate for slowed reactions from wearing armor. You can wear any kind of armor. You reduce the Speed cost for wearing armor by 1. You start the game with a type of armor of your choice.\enabler}
+
+\itemAbility{Surging Confidence (1 Might point)}{When you use an action to make your first recovery roll of the day, you immediately gain another action.\enabler}
+
+\itemAbility{Dexterous Defense}{You are trained in Speed defense actions when not wearing armor.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Second-Tier Scout}
 \label{subsub:scoutSecondTier}
+
 Choose four of the abilities described
 below (or from a lower tier) to add to your
 repertoire. In addition, you can replace one
 of your lower-tier abilities with a different
-one from a lower tier. \par
-\itemAbility{Enable Others}{You can use the helping
-rules to provide a benefit to another
-character attempting a physical task. This
-requires no action on your part.\enabler}
-\itemAbility{Escape (2 Speed points)}{You slip your
-restraints, squeeze through the bars, break the
-grip of a creature holding you, pull free from
-sucking quicksand, or otherwise get loose
-from whatever is holding you in place.\action}
-\itemAbility{Eye for Detail (2 Intellect points)}{When
-you spend five minutes or so thoroughly
-exploring an area no larger than a typical
-room, you can ask the GM one question
-about the area, and they must answer you
-truthfully. You cannot use this ability more
-than one time per area per twenty-four
-hours.\enabler}
-\itemAbility{Hand to Eye (2 Speed points)}{This ability
-provides an asset to any tasks involving
-manual dexterity, such as pickpocketing,
-lockpicking, games involving agility, and so
-on. Each use lasts up to a minute; a new
-use (to switch tasks) replaces the previous
-use.\actionInit}
-\itemAbility{Investigative Skill Training}{You are trained in two
-skills in which you are not already trained.
-Choose two of the following: \textit{identifying, perception, security, gather information,} or a similar investigative skill. 
-You can select this ability multiple times. Each time you select it,
-you must choose two different skills.\enabler}
-\itemAbility{Quick Recovery}{Your second recovery
-roll (usually requiring ten minutes) is only a
-single action, just like the first roll.\enabler}
-\itemAbility{Defense Training}{Choose one type of
-defense task in which you are not already
-trained: \textit{Might, Speed, Intellect.} You are
-trained in \emph{defense tasks} of that type. You
-can select this ability up to three times.
-Each time you select it, you must choose a
-different type of defense task.\enabler}
-\itemAbility{Stand Watch (2 Intellect points)}{While
-standing watch (mostly remaining in
-place for an extended period of time), 
-you unfailingly remain awake and alert for up
-to eight hours. During this time, you are
-trained in perception tasks as well as stealth
-tasks to conceal yourself from those who
-might approach.\actionInit}
-\itemAbility{Travel Skill Training}{You are trained in two skills in
-which you are not already trained. Choose two
-of the following: \textit{navigation, riding, running, piloting, vehicle} or a similar travel skill. You can select this
-ability multiple times. Each time you select it,
-you must choose two different skills.\enabler}
-\itemAbility{Wreck}{Using two hands, you wield a
-weapon or a tool with a powerful swing. (If
-fighting unarmed, this attack is made with
-both fists or both feet together.) When using
-this as an attack, you take a –1 penalty to the
-attack roll, and you inflict 3 additional points
-of damage. When attempting to damage an
-object or barrier, you are trained in the task.
-\action}
+one from a lower tier.
+
+\itemAbility{Enable Others}{You can use the helping rules to provide a benefit to another character attempting a physical task. This requires no action on your part.\enabler}
+
+\itemAbility{Escape (2 Speed points)}{You slip your restraints, squeeze through the bars, break the grip of a creature holding you, pull free from sucking quicksand, or otherwise get loose from whatever is holding you in place.\action}
+
+\itemAbility{Eye for Detail (2 Intellect points)}{When you spend five minutes or so thoroughly exploring an area no larger than a typical room, you can ask the GM one question about the area, and they must answer you truthfully. You cannot use this ability more than one time per area per twenty-four hours.\enabler}
+
+\itemAbility{Hand to Eye (2 Speed points)}{This ability provides an asset to any tasks involving manual dexterity, such as pickpocketing, lockpicking, games involving agility, and so on. Each use lasts up to a minute; a new use (to switch tasks) replaces the previous use.\actionInit}
+
+\itemAbility{Investigative Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{identifying, perception, security, gather information,} or a similar investigative skill. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
+
+\itemAbility{Quick Recovery}{Your second recovery roll (usually requiring ten minutes) is only a single action, just like the first roll.\enabler}
+
+\itemAbility{Defense Training}{Choose one type of defense task in which you are not already trained: \textit{Might, Speed, Intellect.} You are trained in \emph{defense tasks} of that type. You can select this ability up to three times. Each time you select it, you must choose a different type of defense task.\enabler}
+
+\itemAbility{Stand Watch (2 Intellect points)}{While standing watch (mostly remaining in place for an extended period of time), you unfailingly remain awake and alert for up to eight hours. During this time, you are trained in perception tasks as well as stealth tasks to conceal yourself from those who might approach.\actionInit}
+
+\itemAbility{Travel Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{navigation, riding, running, piloting, vehicle} or a similar travel skill. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
+
+\itemAbility{Wreck}{Using two hands, you wield a weapon or a tool with a powerful swing. (If fighting unarmed, this attack is made with both fists or both feet together.) When using this as an attack, you take a –1 penalty to the attack roll, and you inflict 3 additional points of damage. When attempting to damage an object or barrier, you are trained in the task. \action}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Third-Tier Scout}
 \label{subsub:scoutThirdTier}
+
 Choose three of the abilities described
 below (or from a lower tier) to add to your
 repertoire. In addition, you can replace one
 of your lower-tier abilities with a different
-one from a lower tier.\par
-\itemAbility{Controlled Fall}{When you fall while you
-are able to use actions and within reach of
-a vertical surface, you can attempt to slow
-your fall. Make a Speed roll with a difficulty
-of 1 for every 20 feet (6 m) you fall. On a
-success, you take half damage from the fall.
-If you reduce the difficulty to 0, you take no
-damage.\enabler}
-\itemAbility{Armor Expertise}{The cost
-reduction from your Armor Proficiency
-ability improves. You now reduce the Speed
-cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
-\itemAbility{Expert Cypher Use}{You can bear three
-cyphers at a time.}
-\itemAbility{Pain Reduction}{You do not feel the
-detrimental effects of being impaired on the
-damage track, and when you are debilitated,
-you ignore those effects and experience
-the effects normally associated with being
-impaired instead. (Dead is still dead.)\enabler}
-\itemAbility{Resilience}{You have +1 to Armor against
-any kind of physical damage, even damage
-that normally ignores Armor.\enabler}
-\itemAbility{Resilience}{You have +1 to Armor against
-any kind of physical damage, even damage
-that normally ignores Armor.\enabler}
-\itemAbility{Melee Rush (4 Might points)}{You can
-move a short distance and make a melee
-attack that inflicts 2 additional points of
-damage.\action}
-\itemAbility{Seize Opportunity (4 Speed points)}{If
-you succeed on a Speed defense roll to
-resist an attack, you gain an action. You can
-use it immediately even if you have already
-taken a turn in the round. If you use this
-action to attack, the difficulty of your attack
-is reduced by one step. You don’t take an
-action during the next round. \enabler}
-\itemAbility{Weapon Training}{Choose one type of
-attack in which you are not already trained:
-\textit{light bashing, light bladed, light ranged,
-medium bashing, medium bladed, medium
-ranged}. You are trained in attacks
-using that type of weapon. You can select
-this ability multiple times. Each time you
-select it, you must choose a different type of
-attack.\enabler}
-\itemAbility{Think Your Way Out}{When you wish it,
-you can use points from your Intellect Pool
-rather than your Might Pool or Speed Pool
-on any noncombat action.\enabler}
-\itemAbility{Second Chance}{If you roll a natural 1
-on a d20, you can reroll the die. If you reroll,
-you avoid a GM intrusion--unless you roll a
-second 1--and might succeed on your task.
-Once you use this ability, it is not available
-again until after you have undisturbed sleep for at least 10 hours.\enabler}
+one from a lower tier.
+
+\itemAbility{Controlled Fall}{When you fall while you are able to use actions and within reach of a vertical surface, you can attempt to slow your fall. Make a Speed roll with a difficulty of 1 for every 20 feet (6 m) you fall. On a success, you take half damage from the fall. If you reduce the difficulty to 0, you take no damage.\enabler}
+
+\itemAbility{Armor Expertise}{The cost reduction from your Armor Proficiency ability improves. You now reduce the Speed cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
+
+\itemAbility{Expert Cypher Use}{You can bear three cyphers at a time.}
+
+\itemAbility{Pain Reduction}{You do not feel the detrimental effects of being impaired on the damage track, and when you are debilitated, you ignore those effects and experience the effects normally associated with being impaired instead. (Dead is still dead.)\enabler}
+
+\itemAbility{Resilience}{You have +1 to Armor against any kind of physical damage, even damage that normally ignores Armor.\enabler}
+
+\itemAbility{Melee Rush (4 Might points)}{You can move a short distance and make a melee attack that inflicts 2 additional points of damage.\action}
+
+\itemAbility{Seize Opportunity (4 Speed points)}{If you succeed on a Speed defense roll to resist an attack, you gain an action. You can use it immediately even if you have already taken a turn in the round. If you use this action to attack, the difficulty of your attack is reduced by one step. You don’t take an action during the next round. \enabler}
+
+\itemAbility{Weapon Training}{Choose one type of attack in which you are not already trained: \textit{light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged}. You are trained in attacks using that type of weapon. You can select this ability multiple times. Each time you select it, you must choose a different type of attack.\enabler}
+
+\itemAbility{Stone Breaker}{Your attacks against objects inflict 4 additional points of damage when you use a melee weapon that you wield in two hands.\enabler}
+
+\itemAbility{Think Your Way Out}{When you wish it, you can use points from your Intellect Pool rather than your Might Pool or Speed Pool on any noncombat action.\enabler}
+
+\itemAbility{Second Chance}{If you roll a natural 1 on a d20, you can reroll the die. If you reroll, you avoid a GM intrusion--unless you roll a second 1--and might succeed on your task. Once you use this ability, it is not available again until after you have undisturbed sleep for at least 10 hours.\enabler}
+
+\itemAbility{Heavy Weapon Proficiency}{You can use heavy weapons without penalty.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Fourth-Tier Scout}
 \label{subsub:scoutFourthTier}
+
 Choose two of the abilities described
 below (or from a lower tier) to add to your
 repertoire. In addition, you can replace one
 of your lower-tier abilities with a different
-one from a lower tier.\par
-\itemAbility{Stopping Power}{Your attacks deal 1
-additional point of damage.\enabler}
-\itemAbility{Aficionado}{Instead of rolling a d20, you can
-choose to automatically succeed on a task
-you’re trained in. The task must be difficulty
-4 or lower, and it can’t be an attack roll or a
-defense roll.\enabler}
-\itemAbility{Keen Specialist}{You treat rolls of natural
-19 as rolls of natural 20 for either Might
-actions or Speed actions (your choice when
-you gain this ability). This allows you to gain
-a major effect on a natural 19 or 20.\enabler}
-\itemAbility{Read the Signs (4 Intellect points)}{You
-examine an area and learn precise, useful details
-about the past (if any exist). You can ask the GM
-up to four questions about the immediate area;
-each requires its own roll.\action}
-\itemAbility{Runner}{Your standard movement
-distance becomes long.\enabler}
-\itemAbility{Tough As Nails}{When you are impaired
-or debilitated on the damage track, the
-difficulty of Might-based tasks and defense rolls you attempt is decreased by one step.
-If you also have Pain Reduction, make a
-difficulty 1 Might defense roll when you
-reach 0 points in all three of your Pools
-to immediately regain 1 Might point and
-avoid dying. Each time you attempt to
-save yourself with this ability before your
-next ten-hour recovery roll, the difficulty
-increases by one step.\enabler}
+one from a lower tier.
+
+\itemAbility{Stopping Power}{Your attacks deal 1 additional point of damage.\enabler}
+
+\itemAbility{Aficionado}{Instead of rolling a d20, you can choose to automatically succeed on a task you’re trained in. The task must be difficulty 4 or lower, and it can’t be an attack roll or a defense roll.\enabler}
+
+\itemAbility{Keen Specialist}{You treat rolls of natural 19 as rolls of natural 20 for either Might actions or Speed actions (your choice when you gain this ability). This allows you to gain a major effect on a natural 19 or 20.\enabler}
+
+\itemAbility{Read the Signs (4 Intellect points)}{You examine an area and learn precise, useful details about the past (if any exist). You can ask the GM up to four questions about the immediate area; each requires its own roll.\action}
+
+\itemAbility{Runner}{Your standard movement distance becomes long.\enabler}
+
+\itemAbility{Tough As Nails}{When you are impaired or debilitated on the damage track, the difficulty of Might-based tasks and defense rolls you attempt is decreased by one step. If you also have Pain Reduction, make a difficulty 1 Might defense roll when you reach 0 points in all three of your Pools to immediately regain 1 Might point and avoid dying. Each time you attempt to save yourself with this ability before your next ten-hour recovery roll, the difficulty increases by one step.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Fifth-Tier Scout}
 \label{subsub:scoutFifthTier}
+
 Choose three of the abilities described
 below (or from a lower tier) to add to your
 repertoire. In addition, you can replace one
 of your lower-tier abilities with a different
-one from a lower tier.\par
-\itemAbility{Adroit Cypher Use}{You can bear four
-cyphers at a time.}
-\itemAbility{Jump Attack (5 Might points)}{You attempt
-a difficulty 4 Might action to jump high into
-the air as part of your melee attack. If you
-succeed, your attack inflicts 3 additional
-points of damage and knocks down the foe.
-If you fail, you still make your normal attack
-roll, but you don’t inflict the extra damage
-or knock down the opponent.\action}
-\itemAbility{Defense Mastery}{Choose one
-type of defense task in which you are
-trained: \textit{Might, Speed, Intellect}. You are
-specialized in defense tasks of that type.
-You can select this ability up to three times.
-Each time you select it, you must choose a
-different type of defense task.\enabler}
-\itemAbility{Parry (5 Speed points)}{You can deflect
-incoming attacks quickly. For the next ten
-rounds, the difficulty of all Speed defense
-rolls is reduced by one step.\enabler}
-\itemAbility{Physically Gifted}{Any time you spend
-points from your Might Pool or Speed Pool on
-an action for any reason, if you roll a 1 on the
-associated die, you reroll, always taking the
-second result (even if it’s another 1).\enabler}
-\itemAbility{Take Command (3 Intellect points)}{You issue a specific command to another
-character. If that character chooses to listen,
-the difficulty of any attack he attempts
-is reduced by one step, and a hit deals
-3 additional points of damage. If your
-command is to perform a task other than an attack, the difficulty of the task is reduced by
-two steps.\action}
-\itemAbility{Vigilant (5 Might points)}{When you would
-normally be dazed or stunned, you are not
-dazed or stunned.\enabler}
+one from a lower tier.
+
+\itemAbility{Adroit Cypher Use}{You can bear four cyphers at a time.}
+
+\itemAbility{Jump Attack (5 Might points)}{You attempt a difficulty 4 Might action to jump high into the air as part of your melee attack. If you succeed, your attack inflicts 3 additional points of damage and knocks down the foe. If you fail, you still make your normal attack roll, but you don’t inflict the extra damage or knock down the opponent.\action}
+
+\itemAbility{Defense Mastery}{Choose one type of defense task in which you are trained: \textit{Might, Speed, Intellect}. You are specialized in defense tasks of that type. You can select this ability up to three times. Each time you select it, you must choose a different type of defense task.\enabler}
+
+\itemAbility{Parry (5 Speed points)}{You can deflect incoming attacks quickly. For the next ten rounds, the difficulty of all Speed defense rolls is reduced by one step.\enabler}
+
+\itemAbility{Physically Gifted}{Any time you spend points from your Might Pool or Speed Pool on an action for any reason, if you roll a 1 on the associated die, you reroll, always taking the second result (even if it’s another 1).\enabler}
+
+\itemAbility{Take Command (3 Intellect points)}{You issue a specific command to another character. If that character chooses to listen, the difficulty of any attack he attempts is reduced by one step, and a hit deals 3 additional points of damage. If your command is to perform a task other than an attack, the difficulty of the task is reduced by two steps.\action}
+
+\itemAbility{Vigilant (5 Might points)}{When you would normally be dazed or stunned, you are not dazed or stunned.\enabler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUT TIER 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Sixth-Tier Scout}
 \label{subsub:scoutSixthTier}
+
 Choose three of the abilities described
 below (or from a lower tier) to add to your
 repertoire. In addition, you can replace one
 of your lower-tier abilities with a different
-one from a lower tier.\par
-\itemAbility{Again and Again (8 Speed points)}{You
-can take an additional action in a round in
-which you have already acted.\enabler}
-\itemAbility{Again and Again (8 Speed points)}{You
-can take an additional action in a round in
-which you have already acted.\enabler}
-\itemAbility{Attack Mastery}{Choose one
-type of attack, even one in which you are
-already trained: \textit{light bashing, light bladed,
-light ranged, medium bashing, medium
-bladed, medium ranged, heavy bashing,
-heavy bladed, heavy ranged.} You are
-trained in attacks using that type of weapon.
-If you’re already trained in that type of
-attack, you instead are specialized in that
-type of attack.\enabler}
-\itemAbility{Armor Mastery}{The cost reduction
-from your Armor Proficiency ability
-improves. When you wear any armor, you
-reduce the armor’s Speed cost to 0. If you
-select this ability and you already have the
-Armor Expertise ability, replace
-Armor Expertise with a different
-third-tier ability because Armor Mastery is better.
-\textit{Must have Armor Proficiency} to benefit from this ability.\enabler}
-\itemAbility{Blade Storm (5 Speed points)}{You stand
-still and make melee attacks against up
-to five foes within reach, all as part of the
-same action in one round. Make a separate
-attack roll for each foe. You remain limited
-by the amount of Effort you can apply on
-one action. Anything that modifies your
-attack or damage applies to all of these
-attacks.\action}
-\itemAbility{Wild Vitality (4 Intellect points)}{You attune
-with the life force of a natural creature (your
-size or bigger) within long range that you
-can see. This is a level 2 Intellect task. If you
-succeed, the creature is not harmed, but
-through resonance with its wild vitality, you
-gain several benefits for up to one minute: an
-asset to all your Might-based tasks (including
-attacks and defenses), +2 to your Might Edge
-and Speed Edge, and 2 additional points
-of damage on all successful melee attacks.\actionInit}
+one from a lower tier.
+
+\itemAbility{Again and Again (8 Speed points)}{You can take an additional action in a round in which you have already acted.\enabler}
+
+\itemAbility{Attack Mastery}{Choose one type of attack, even one in which you are already trained: \textit{light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing, heavy bladed, heavy ranged.} You are trained in attacks using that type of weapon. If you’re already trained in that type of attack, you instead are specialized in that type of attack.\enabler}
+
+\itemAbility{Armor Mastery}{The cost reduction from your Armor Proficiency ability improves. When you wear any armor, you reduce the armor’s Speed cost to 0. If you select this ability and you already have the Armor Expertise ability, replace Armor Expertise with a different third-tier ability because Armor Mastery is better. \textit{Must have Armor Proficiency} to benefit from this ability.\enabler}
+
+\itemAbility{Blade Storm (5 Speed points)}{You stand still and make melee attacks against up to five foes within reach, all as part of the same action in one round. Make a separate attack roll for each foe. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to all of these attacks.\action}
+
+\itemAbility{Wild Vitality (4 Intellect points)}{You attune with the life force of a natural creature (your size or bigger) within long range that you can see. This is a level 2 Intellect task. If you succeed, the creature is not harmed, but through resonance with its wild vitality, you gain several benefits for up to one minute: an asset to all your Might-based tasks (including attacks and defenses), +2 to your Might Edge and Speed Edge, and 2 additional points of damage on all successful melee attacks.\actionInit}
 
 % subsection* scout (end)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCOUNDREL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Scoundrel} % (fold)
 \label{sub:scoundrel}
-Scoundrels are rogues--good, bad, and neutral--who either live outside the law or manipulates it to suit their needs. They can come from any world or region in the Galaxy. Most use their Intelligence and attention to detail to accomplish tasks, and many rely on their silver-tongue when all else fails. The scoundrel gets by with bravado, dunning, duplicity, and trickery. They live by their wits, manipulating others, but can fight when the need arises.\para 
+Scoundrels are rogues--good, bad, and neutral--who either live outside the law or manipulates it to suit their needs. They can come from any world or region in the Galaxy. Most use their Intelligence and attention to detail to accomplish tasks, and many rely on their silver-tongue when all else fails. The scoundrel gets by with bravado, dunning, duplicity, and trickery. They live by their wits, manipulating others, but can fight when the need arises.\par
 
 Many scoundrels live a life of adventure for the excitement it provides. Others go adventuring to advance their illicit careers. Some are good-hearted rogues in it for the thrill or to right a wrong done to them or those they love. Others are despicable knaves who serve only one master--the greed that swells inside them. Most often, an adventurous scoundrel falls somewhere in-between, changing allegiance and attitude as the political climate changes. The skills a scoundrel pick up along the way make them great members of any mission team.
 
