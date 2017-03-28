@@ -6,9 +6,10 @@
 % misc
 \renewcommand{\familydefault}{bch}	% font
 \pagestyle{plain}					% no pagenumbering
-\setlength{\parindent}{0pt}			% no paragraph indentation
+\setlength{\parindent}{14pt}		% paragraph indentation
 
 % required packages (add your own)
+\usepackage[usenames, dvipsnames]{color}
 \usepackage{graphicx}
 \usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry} % margins
 \usepackage{epic}
@@ -49,12 +50,37 @@
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
 \definecolor{RoyalBlue}{rgb}{0.0, 0.14, 0.4}
+\definecolor{25gray}{gray}{0.25}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % My special commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 \newcommand{\newSection}[1]{\section*{#1} \addcontentsline{toc}{section}{#1} \label{sec:#1} \HRule}
+\newcommand{\statPool}[5]
+{
+	\subsubsection*{#1 Stat Pools}
+	\label{subsub:#1StatPools} 	
+	\begin{center}
+	\begin{tabular}{ |c|c| } 
+	\hline
+	\textbf{Stat} & \textbf{Pool Starting Value} \\ 
+	\hline \hline
+	Might & #2 \\ 
+	\hline
+ 	Speed & #3  \\
+ 	\hline 
+ 	Intelligence & #4  \\ 
+ 	\hline
+	\end{tabular}
+	\end{center}
+	#1s get #5 additional points to divide among their stat Pools however they wish.
+}
+\newcommand{\itemLine}[2]{\textbf{#1:} {#2}\par}
+\newcommand{\itemAbility}[2]{\textcolor{25gray}{\textbullet\textbf{ #1:}} {#2}\par}
+\newcommand{\enabler}{\textit{ Enabler.}}
+\newcommand{\action}{\textit{ Action.}}
+\newcommand{\actionInit}{\textit{ Action to initiate.}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section Environment
@@ -140,34 +166,7 @@ pdfproducer={LaTeX}, % PDF producer
 % Intro
 \begin{docsection}{How To Play}
 
-The rules of the Cypher System are quite straightforward at their heart, as 
-all of gameplay is based around a few core concepts. This chapter provides a
- brief explanation of how to play the game, and it’s useful for learning the 
- game. \\
 
-The Cypher System uses a twenty-sided die (1d20) to determine the results of most actions. 
-Whenever a roll of any kind is called for and no die is specified, roll a d20.
-The game master sets a difficulty for any given task. There are ten degrees of difficulty. 
-Thus, the difficulty of a task can be rated on a scale of 1 to 10. \\
-
-Each difficulty has a target number
-associated with it. The target number is
-always three times the task’s difficulty, so
-a difficulty 4 task has a target number of
-12. To succeed at the task, you must roll
-the target number or higher. \\
-
-Character skills, favorable circumstances,
-or excellent equipment can decrease
-the difficulty of a task. \\
-
-For example, if a character is trained in climbing, she turns
-a difficulty 6 climb into a difficulty 5 climb.
-This is called decreasing the difficulty by
-one step. If she is specialized in climbing,
-she turns a difficulty 6 climb into a difficulty
-4 climb. This is called decreasing the
-difficulty by two steps. \\
 
 
 \end{docsection}
@@ -194,14 +193,436 @@ Players may choose from the following types for their characters: \hyperlink{sub
 \subsection*{Soldier} % (fold)
 \label{sub:soldier}
 
-The general warrior.
+Soldiers combine discipline with martial skills to become the best pure warriors in the Galaxy. Soldiers can be stalwart defenders of those in need, money-seeking marauders, or brave adventurers. They can be hired guns, noble champions, or cold-hearted killers. They fight for glory, for honour, to right wrongs, to gain power, to acquire wealth,  or simply for the thrill of battle. \par
 
+Soldiers are strong and steadfast, relying primarily on their ability to wield heavy weapons and armour due their high Might -- or alternatively a quicker resolve with medium or light weapons and high Speed. Their decent rounded stats make them the best general purpose fighters and an essential parts of any adventuring party, since few can match the consistent damage dealt by a well equipped, and motivated, soldier. 
+
+\subsubsection*{Characteristics}
+\label{subsub:soldierCharacteristics}
+Most soldiers come to the profession after receiving some amount of formal training from a military organization, local militia, or private army. Some attend formal academies; others are self-taunt and well tested. A soldier may have taken up their weapon to escape a mundane life, protect a proud family traditions, or to fulfill their oath and uphold their honour. Soldiers in a particular unit share a certain camaraderie, but most have nothing in common except battle prowess and the desire to apply it to a given situation. \par
+
+\itemLine{Individual Role} {Soldiers are physical, action-oriented people. They're more likely to overcome a challenge using hard word and perseverance as apposed to cheap tricks; they often take the most direct path towards their goal.}
+\itemLine{Group Role} {Soldiers usually take and deal the most punishment in a dangerous situation. Often it falls on them to protect the other group members from threats. This sometimes means that Soldiers take on leadership roles as well, at least during combat.}
+\itemLine{Societal Role} {In most cities and villages, people hold soldiers in great esteem. Although a soldier could just as likely be a thug as a noble warrior, those who help protect their fellow sentient from the dangers of apposing forces are always treated respect; or controlled by fear. There is no shame in getting paid for the use of one’s skills, so being a blade for hire is a perfectly acceptable profession.}
+\itemLine{Advanced Soldiers} {As soldiers advance, their skill in battle--whether defending themselves or dishing out damage--increases to impressive levels. At higher tiers, they can often take on groups of foes by themselves or stand toe-to-toe with anyone.}
+
+\statPool{Soldier}{10}{10}{8}{6}
+
+\subsubsection*{Examples of Soldiers}
+\label{subsub:soldierExamples}
+Admiral Ackbar, Admiral Carth Onasi, Mandalore the Preserver (Canderous Ordo), Poe Dameron, Clone Captain Rex, Wedge Antilles, Saul Karath, Brianna the Last Handmaiden, Garazeb "Zeb" Orrelios.
+
+\subsubsection*{Alternative titles}
+\label{subsub:soldierAlternative}
+Guard, bodyguard, enforcer, trooper, adventurer, warrior, mercenary.
+
+\subsubsection*{First-Tier Soldier}
+\label{subsub:soldierFirstTier}
+First-tier soldiers have the following abilities: \par
+\itemLine{Effort} {Your Effort is 1.} 
+\itemLine{Physical Nature} {You have a Might Edge
+of 1 and a Speed Edge of 0, or you have a
+Might Edge of 0 and a Speed Edge of 1.
+Either way, you have an Intellect Edge of 0.}
+\itemLine{Cypher Use} {You can bear two cyphers at a time.}
+\itemLine{Martial weapon proficiency} {You can use any non-Lightsaber weapon.\enabler}
+\itemLine{Starting Equipment} {Appropriate clothing, two weapons of your choice, one expensive item, two moderately priced items, and up to four inexpensive items}
+\itemLine{Special Abilities} {Pick four from the abilities described below. Some
+special abilities are constant, ongoing effects, and
+others are specific actions that usually cost points
+from one of your stat Pools. You cannot choose the same ability more than once unless specified otherwise.}
+\itemAbility{Bash (1 Might point)} {This is a pummeling
+melee attack. Your attack inflicts 1 less point
+of damage than normal, but dazes your
+target for one round, during which time the
+difficulty of all tasks it performs is modified
+by one step to its detriment.\action}
+\itemAbility{Control the Field (1 Might point)} {This
+melee attack inflicts 1 less point of damage
+than normal, but regardless of whether
+you hit the target, you maneuver it into a
+position you desire within immediate range.\action}
+\itemAbility{Extra Edge} {Your physical nature grants
+you an Edge of 1 in both Speed and Might,
+rather than one or the other.}
+\itemAbility{Unarmed Fighter} {When you make
+an unarmed attack (such as a punch or
+kick), it counts as a medium weapon
+instead of a light weapon.\enabler}
+\itemAbility{Overwatch (1 Intellect point)} {You use
+a ranged weapon to target a limited area
+(such as a doorway, a hallway) and make an attack
+against the next viable target to enter that
+area. This works like a wait action, but you
+also negate any benefit the target would
+have from cover, position, surprise, range,
+illumination, or visibility. Further, you inflict
+1 additional point of damage with the attack.
+You can remain on Overwatch as long as you
+wish, within reason.\action}
+\itemAbility{Physical Skill Training}{You are trained in two
+skills in which you are not already trained.
+Choose two of the following:\textit{balancing,
+climbing, jumping, running, or swimming.}
+You can select this ability multiple times.
+Each time you select it, you must choose
+two different skills.\enabler} 
+\itemAbility{Pierce (1 Speed point)}{This is a well-aimed,
+penetrating ranged attack. You make
+an attack and inflict 1 additional point of
+damage if your weapon has a sharp or energy-based point.\action}
+\itemAbility{Armor Proficiency}{You can wear armor
+for long periods of time without tiring
+and can compensate for slowed reactions
+from wearing armor. You can wear any kind
+of armor. You reduce the Speed cost for
+wearing armor by 1. You start the game with
+a type of armor of your choice.\enabler}
+\itemAbility{Tomahawk Toss (2 Speed points)}{After using
+a thrown light weapon, you draw another
+light weapon and make another thrown
+attack against the same target or a different
+one.\action}
+\itemAbility{Weakening Strike (1 Speed point)}{This is a quick,
+agile melee attack. Your attack inflicts 1 less
+point of damage than normal but dazes
+your target for one round, during which
+time the difficulty of all tasks it performs
+is modified by one step to its detriment.\action}
+\itemAbility{Thrust (1 Might point)}{This is a powerful
+melee stab. You make an attack and inflict 1
+additional point of damage if your weapon
+has a sharp edge or point.\action}
+\itemAbility{Dexterous Defense}{You are trained
+in Speed defense actions when not wearing
+armor.\enabler}
+
+\subsubsection*{Second-Tier Soldier}
+\label{subsub:soldierSecondTier}
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
+\itemAbility{Power Strike (2 Might points)}{This is a heavy,
+powerful slice with a bladed weapon,
+probably overhand. You must grip your
+weapon with two hands to chop. When
+making this attack, you take a –1 penalty to
+the attack roll, and you inflict 3 additional
+points of damage.\action}
+\itemAbility{Crush (2 Might points)}{This is a powerful
+pummeling attack with a bashing weapon,
+probably overhand. You must grip your
+weapon with two hands to crush. (If fighting
+unarmed, this attack is made with both fists
+or both feet together.) When making this
+attack, you take a –1 penalty to the attack
+roll, and you inflict 3 additional points of
+damage.\action}
+\itemAbility{Mighty Blow (2 Might points)}{You strike
+two foes with a single blow. Make separate
+attack rolls for each foe, but both attacks
+count as a single action in a single round.
+You remain limited by the amount of Effort
+you can apply on one action. Anything that
+modifies your attack or damage applies to
+both of these attacks.\action}
+\itemAbility{Reload (1 Speed point)}{When using a
+weapon that normally requires an action to
+reload, such as a heavy blaster rifle, you can
+reload and fire (or fire and reload) in the
+same action.\enabler}
+\itemAbility{Weapon Training}{Choose one type of
+attack in which you are not already trained:
+\textit{light bashing, light bladed, light ranged,
+medium bashing, medium bladed, medium
+ranged, heavy bashing, heavy bladed, 
+heavy ranged}. You are trained in attacks
+using that type of weapon. You can select
+this ability multiple times. Each time you
+select it, you must choose a different type of
+attack.\enabler}
+\itemAbility{Defense Training}{Choose one type of
+defense task in which you are not already
+trained: \textit{Might, Speed, Intellect.} You are
+trained in \emph{defense tasks} of that type. You
+can select this ability up to three times.
+Each time you select it, you must choose a
+different type of defense task.\enabler}
+\itemAbility{Kill Zone (2 Speed points)}{If you
+take down a foe, you can immediately make
+another attack on that same turn against
+a new foe within your reach. The second
+attack is part of the same action. You can
+use this ability with melee attacks and
+ranged attacks.\enabler}
+
+\subsubsection*{Third-Tier Soldier}
+\label{subsub:soldierThirdTier}
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
+\itemAbility{Deadly Aim (3 Speed points)}{For the next
+minute, all ranged attacks you make inflict
+2 additional points of damage.\actionInit}
+\itemAbility{Armor Expertise}{The cost
+reduction from your Armor Proficiency
+ability improves. You now reduce the Speed
+cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
+\itemAbility{Expert Cypher Use}{You can bear three
+cyphers at a time.\enabler}
+\itemAbility{Reaper (3 Might points)}{For the next
+minute, all melee attacks you make inflict
+2 additional points of damage.\actionInit}
+\itemAbility{Lunge (2 Might points)}{This ability
+requires you to extend yourself for a powerful
+stab or smash. The awkward lunge increases
+the difficulty of the attack roll by one step.
+If your attack is successful, it inflicts 4
+additional points of damage.\action}
+\itemAbility{Close Combat Specialist}{If a creature you attacked on
+your last turn with a melee attack uses its
+action to move out of immediate range, you
+gain an action to attack the creature as a
+parting blow, even if you have already taken
+a turn in the round.\enabler}
+\itemAbility{Seize the Moment (4+ Speed points)}{If you succeed on a Speed defense roll to
+resist an attack, you gain an action. You can
+use the action immediately even if you have
+already taken a turn in the round. You don’t
+take an action during the next round, unless
+you apply a level of Effort when you use
+Seize the Moment.\enabler}
+\itemAbility{Slice 'n Dice (2 Speed points)}{This is a quick
+attack with a bladed or pointed weapon that
+is hard to defend against. The difficulty of
+the attack roll is decreased by one step. If
+the attack is successful, it deals 1 less point
+of damage than normal.\action}
+\itemAbility{Rapid Fire (2 Speed points)}{If a weapon
+has the ability to fire rapid shots without
+reloading (usually called a rapid-fire
+weapon, such as a repeater blaster), you
+can spray multiple shots around your target
+to increase the chance of hitting. This ability
+uses 1d6 + 1 rounds of ammo (or all the
+ammo in the weapon, if it has less than the
+number rolled). The difficulty of the attack
+roll is decreased by one step. If the attack is
+successful, it deals 1 less point of damage
+than normal.\action}
+\itemAbility{Double Tap (2 Speed points)}{As part
+of the same action, you make a ranged attack against two targets that are within
+immediate range of each other. Make a
+separate attack roll against each target. The
+difficulty of each attack roll is increased by
+one step.\action}
+
+\subsubsection*{Fourth-Tier Soldier}
+\label{subsub:soldierFourthTier}
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
+\itemAbility{Stopping Power}{Your attacks deal 1
+additional point of damage.\enabler}
+\itemAbility{Armourologist}{When wearing
+armor, you gain +1 to Armor.\enabler}
+\itemAbility{Deceptive Strike (2 Speed points)}{If you spend one
+action creating a misdirection or diversion,
+in the next round you can take advantage
+of your opponent’s lowered defenses. Make
+a melee attack roll against that opponent.
+The difficulty of the roll is decreased by one
+step. If your attack is successful, it inflicts 4
+additional points of damage.\action}
+\itemAbility{Minor to Major}{You treat rolls of natural
+19 as rolls of natural 20 for Might attack
+rolls or Speed attack rolls (your choice when
+you gain this ability). This allows you to gain
+a major effect on a natural 19 or 20.\enabler}
+\itemAbility{Momentum}{If you use an action to
+move, your next attack made using a melee
+weapon before the end of the next round
+inflicts 2 additional points of damage.\enabler}
+\itemAbility{Opening Gambit (4 Might points)}{Your
+melee attack shreds the defenses of a
+target. Any energy-based defenses it has
+(such as a force field) are
+negated for 1d6 + 1 rounds. If the target
+has no energy-based defenses, its Armor
+is reduced by 2 for one minute. If it has
+no energy-based defenses or Armor, the
+difficulty of all attacks made against the
+target is lowered by one step for one
+minute. Lightsabers are affected for 2 turns only.\action}
+\itemAbility{Sniping Shot (2 Speed points)}{If you spend one
+action aiming, in the next round you can
+make a precise ranged attack. The difficulty
+of the attack roll is decreased by one step.
+If your attack is successful, it inflicts 4
+additional points of damage.\action}
+\itemAbility{Tough As Nails}{When you are impaired
+or debilitated on the damage track, the
+difficulty of Might-based tasks and defense rolls you attempt is decreased by one step.
+If you also have Ignore the Pain, make a
+difficulty 1 Might defense roll when you
+reach 0 points in all three of your Pools
+to immediately regain 1 Might point and
+avoid dying. Each time you attempt to
+save yourself with this ability before your
+next ten-hour recovery roll, the difficulty
+increases by one step.\enabler}
+
+\subsubsection*{Fifth-Tier Soldier}
+\label{subsub:soldierFifthTier}
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
+\itemAbility{Adroit Cypher Use}{You can bear four
+cyphers at a time.\enabler}
+\itemAbility{Arc Spray (3 Speed points)}{If a weapon
+has the ability to fire rapid shots without
+reloading (usually called a rapid-fire
+weapon, such as a repeater blaster), you
+can fire your weapon at up to three targets
+(all next to one another) at once. Make a
+separate attack roll against each target. The
+difficulty of each attack is increased by one
+step.\action}
+\itemAbility{Attack Mastery}{Choose one
+type of attack, even one in which you are
+already trained: \textit{light bashing, light bladed,
+light ranged, medium bashing, medium
+bladed, medium ranged, heavy bashing,
+heavy bladed, heavy ranged.} You are
+trained in attacks using that type of weapon.
+If you’re already trained in that type of
+attack, you instead are specialized in that
+type of attack.\enabler}
+\itemAbility{Improved Success}{When you roll a 17 or
+higher on an attack roll that deals damage,
+you deal 1 additional point of damage. For
+instance, if you roll a natural 18, which
+normally deals 2 extra points of damage,
+you deal 3 extra points instead. If you roll
+a natural 20 and choose to deal damage
+instead of achieve a special major effect,
+you deal 5 extra points of damage.\enabler}
+\itemAbility{Hi-Jump Attack (5 Might points)}{You attempt
+a difficulty 4 Might action to jump high into
+the air as part of your melee attack. If you
+succeed, your attack inflicts 3 additional
+points of damage and knocks the foe down.
+If you fail, you still make your normal attack
+roll, but you don’t inflict the extra damage or
+knock down the opponent if you hit.\action}
+\itemAbility{Armor Mastery}{The cost reduction
+from your Armor Proficiency ability
+improves. When you wear any armor, you
+reduce the armor’s Speed cost to 0. If you
+select this ability and you already have the
+Armor Expertise ability, replace
+Armor Expertise with a different
+third-tier ability because Armor Mastery is better.\enabler}
+\itemAbility{Defense Mastery}{Choose one
+type of defense task in which you are
+trained: \textit{Might, Speed, Intellect}. You are
+specialized in defense tasks of that type.
+You can select this ability up to three times.
+Each time you select it, you must choose a
+different type of defense task.\enabler}
+\itemAbility{Parry (5 Speed points)}{You can deflect
+incoming attacks quickly. For the next ten
+rounds, the difficulty of all Speed defense
+rolls is reduced by one step.\enabler}
+
+\subsubsection*{Sixth-Tier Soldier}
+\label{subsub:soldierSixthTier}
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.\par
+\itemAbility{Coup de Grace (5 Might points)}{If your
+foe is prone, stunned, or somehow helpless
+or incapacitated when you strike, you
+inflict 8 additional points of damage on a
+successful hit.\enabler}
+\itemAbility{Magnificent Moment}{If you make an
+attack or attempt a task with the immediate
+action you gain by using Seize the Moment,
+the difficulty is reduced by one step.\enabler}
+\itemAbility{High Noon (5 Speed points)}{You
+stand still and make ranged attacks against
+up to five foes within range, all as part
+of the same action in one round. Make a
+separate attack roll for each foe. You remain
+limited by the amount of Effort you can
+apply on one action. Anything that modifies
+your attack or damage applies to all of these
+attacks.\action}
+\itemAbility{Slayer (3 Might points)}{When you
+successfully strike a foe of level 5 or lower,
+make another roll (using whichever stat
+you used to attack). If you succeed on the
+second roll, you kill the target outright. If
+you use this ability against a PC of any tier
+and you succeed on the second roll, the
+character moves down one step on the
+damage track.\enabler}
+\itemAbility{Blade Storm (5 Speed points)}{You stand
+still and make melee attacks against up
+to five foes within reach, all as part of the
+same action in one round. Make a separate
+attack roll for each foe. You remain limited
+by the amount of Effort you can apply on
+one action. Anything that modifies your
+attack or damage applies to all of these
+attacks.\action}
+\itemAbility{Weapon and Body (5 Speed points)}{After making a melee weapon or ranged
+weapon attack, you follow up with a punch
+or kick as an additional attack, all as part
+of the same action in one round. The two
+attacks can be directed at different foes. Make a separate attack roll for each attack.
+You remain limited by the amount of Effort
+you can apply on one action. Anything that
+modifies your attack or damage applies to
+both attacks, unless it is tied specifically to
+your weapon.\action}
 % subsection* soldier (end)
+
 
 \subsection*{Scout} % (fold)
 \label{sub:scout}
+Scouts are natural explorers and adventurers, full of curiosity and trained to handle out-of-the-way locations where they often operate. Scouts tend to be independent, signing on when the credits are good and their skills are best utilized and tested. Scouts understand the lay of the land and the orbit of the stars. They know how to recognize danger and locate basic necessities for survival. The scout seeks knowledge, tries to solve mysteries, and wants to be the first to see something new. The scout learns to find a path through the wild regions, often becoming a decent pilot along the way, and usually learns how to protect themselves from whatever hides over the next hill or beyond the most distant nebula. \par
 
-The fast, typically stealthy operative.
+Scouts temper insatiable curiosity with excellent survival instincts. They make use of Speed and own experience to spot and avoid dangers. The scout has an undying faith in themselves and their abilities that sometimes allows the scout to call upon reserves and inner strength to get out of tough situations. Scouts like to be the first to reach any location, although they also want to reach it in one piece. They can be gruff or silent, jovial or talkative. They are confident and brave, and they often appreciate the wonders that the galaxy has to offer.
+
+\subsubsection*{Characteristics}
+\label{subsub:scoutCharacteristics}
+Scouts come to their profession in search of something, usually knowledge or secrets or answers to the mysteries of the ages. Scholars, while possibly associated with and institute of learning or particular government, often forsake the halls of academia for the pure research of working in the field. Pathfinders and explorers may work for a government or military institutions, or freelance contracts from anyone willing to pay for their services. Many scouts develop into bounty hunters, especially those who combine military skills with their tracking and searching abilities. Every group of adventurers benefit from having a scout in the party.\par
+
+\itemLine{Individual Role} {Although scouts can be academics or well studied, they are first and foremost interested in action. They face grave dangers and terrible obstacles as a routine part of life.}
+\itemLine{Group Role} {Scouts sometimes work
+alone, but far more often they operate in teams
+with other characters. The scout frequently
+leads the way, blazing the trail. However, they
+also likely to stop and investigate anything
+intriguing they stumble upon.}
+\itemLine{Societal Role} {Scouts are remarkable in
+that they can do so many different
+things, and some do multiple
+things. Skilled and learned scouts
+who share their achievements with
+others are prized members
+of society, well respected for
+what they know and can do.}
+\itemLine{Advanced Explorers} {Higher-tier scouts
+gain more skills, some combat abilities, and
+a number of abilities that allow them to deal
+with danger. In short, they become more
+and more well-rounded, able to deal with
+any challenge.}
+
+\statPool{Scout}{10}{9}{9}{6}
+
+\subsubsection*{Examples of Scouts}
+\label{subsub:scoutExamples}
+Chewbacca, Boba Fett, Sabine Wren, Mission Vao, Mira, Hanharr.
+
+\subsubsection*{Alternative titles}
+\label{subsub:scoutAlternative}
+Ranger, outrider, hunter, explorer, guide, scholar, vanguard.
+
+
+
 
 % subsection* scout (end)
 
