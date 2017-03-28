@@ -1,12 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document properties and packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,10pt,final]{book}
-
-% misc
-\renewcommand{\familydefault}{bch}	% font
-\pagestyle{plain}					% no pagenumbering
-\setlength{\parindent}{14pt}		% paragraph indentation
+\documentclass[a4paper,10pt,final,twocolumn,oneside]{book}
 
 % required packages (add your own)
 \usepackage[usenames, dvipsnames]{color}
@@ -28,10 +23,13 @@
 \usepackage{csquotes}
 \usepackage[usenames,dvipsnames]{xcolor} % color
 \usepackage{tikz}
-\usepackage{multicol}										% columns env.
-	\setlength{\columnsep}{1cm}
 \usepackage{paralist}										% compact lists
+\usepackage{fancyhdr}
+\usepackage{titlesec}
 
+\renewcommand{\familydefault}{bch}  % font
+\pagestyle{fancy}
+\fancyhf{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define macros (for convience)
@@ -56,7 +54,16 @@
 % My special commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-\newcommand{\newSection}[1]{\section*{#1} \addcontentsline{toc}{section}{#1} \label{sec:#1} \HRule}
+
+\newcommand{\docSection}[1]
+{
+  \begin{figure*}
+    \section{#1}
+    \HRule
+  \end{figure*}
+  % \section*{#1} \addcontentsline{toc}{section}{#1} \label{sec:#1} \HRule
+}
+
 \renewcommand\frontmatter{
   \pagenumbering{Roman}
 }
@@ -64,6 +71,7 @@
 \renewcommand\mainmatter{
   \pagenumbering{arabic}
 }
+
 \newcommand{\statPool}[5]
 {
 	\subsubsection*{#1 Stat Pools}
@@ -83,42 +91,22 @@
 	\end{center}
 	#1s get #5 additional points to divide among their stat Pools however they wish.
 }
-\newcommand{\itemLine}[2]{\textbf{#1:} {#2}\par}
-\newcommand{\itemAbility}[2]{\textcolor{25gray}{\textbullet\textbf{ #1:}} {#2}\par}
+
+\newcommand{\itemLine}[2]{\textbf{#1:}{ #2}\par}
+\newcommand{\itemAbility}[2]{\textcolor{25gray}{\textbullet\textbf{ #1:}}{ #2}\par}
 \newcommand{\enabler}{\textit{ Enabler.}}
 \newcommand{\action}{\textit{ Action.}}
 \newcommand{\actionInit}{\textit{ Action to initiate.}}
 \newcommand{\actionInitTarget}{\textit{ Action per target to initiate.}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Section Environment
+% Environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{docsection}[1]
-{
-  \begin{multicols*}{2}[\newSection{#1}]
-}
-{
-  \end{multicols*}
-  \newpage
-}
-
-\newenvironment{docBlankPage}
-{
-	\begin{center}
-	\vspace*{\fill}
-}
-{
-	\vspace*{\fill}
-	\end{center}
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pre-document setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\lefthyphenmin=100000
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
 \usetikzlibrary{arrows,shapes}
 \hypersetup{
 %draft, % Uncomment to remove all links (useful for printing in black and white)
@@ -132,6 +120,26 @@ pdfkeywords={\DocKeywords}, % PDF Keywords
 pdfcreator={pdfLaTeX}, % PDF Creator
 pdfproducer={LaTeX}, % PDF producer
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page Header & Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titlespacing*{\subsection}{0pt}{1.5em}{1em}
+\titlespacing*{\subsubsection}{0pt}{1.5em}{1em}
+\lefthyphenmin=10
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\setlength{\columnsep}{1cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin document
@@ -159,68 +167,62 @@ pdfproducer={LaTeX}, % PDF producer
 \vspace*{\fill}
 \end{titlepage}
 
-\pagestyle{plain}
-\begin{docBlankPage}
+\thispagestyle{plain}
+\setcounter{page}{2}
+\begin{figure*}
+\centering
+\vspace*{\fill}
 \textit{This page is left intentionally blank.}
-\end{docBlankPage}
+\vspace*{\fill}
+\end{figure*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
-\newpage
-
 \mainmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Intro
-\begin{docsection}{How To Play}
+\chapter{Introduction} % (fold)
+\label{cha:introduction}
 
+\section{How To Play} % (fold)
+\label{sec:how_to_play}
 
+% section how_to_play (end)
 
+% chapter introduction (end)
 
-\end{docsection}
+\chapter{Characters} % (fold)
+\label{cha:characters}
 
-%Front matter
-\begin{docsection}{Some Other Stuff}
+\section{Types} % (fold)
+\label{sec:types}
 
-Space to be filled with content. This should also be a multi-column page.
-
-\end{docsection}
-
-%Descriptors
-\begin{docsection}{Descriptors}
-
-Space to be filled with content. This should also be a multi-column page.
-
-\end{docsection}
-
-%Types
-\begin{docsection}{Types}
-
-Players may choose from the following types for their characters: \hyperlink{sub:soldier}{Soldier}, \hyperlink{sub:scout}{Scout}, \hyperlink{sub:scoundrel_noble}{Scoundrel or Noble}.
+Players may choose from the following types for their characters: \hyperlink{sub:soldier}{Soldier}, \hyperlink{sub:scout}{Scout}, \hyperlink{sub:scoundrel}{Scoundrel}.
 
 \subsection*{Soldier} % (fold)
 \label{sub:soldier}
 
-Soldiers combine discipline with martial skills to become the best pure warriors in the Galaxy. Soldiers can be stalwart defenders of those in need, money-seeking marauders, or brave adventurers. They can be hired guns, noble champions, or cold-hearted killers. They fight for glory, for honour, to right wrongs, to gain power, to acquire wealth,  or simply for the thrill of battle. \par
+Soldiers combine discipline with martial skills to become the best pure warriors in the Galaxy. Soldiers can be stalwart defenders of those in need, money-seeking marauders, or brave adventurers. They can be hired guns, noble champions, or cold-hearted killers. They fight for glory, for honour, to right wrongs, to gain power, to acquire wealth,  or simply for the thrill of battle.
 
 Soldiers are strong and steadfast, relying primarily on their ability to wield heavy weapons and armour due their high Might -- or alternatively a quicker resolve with medium or light weapons and high Speed. Their decent rounded stats make them the best general purpose fighters and an essential parts of any adventuring party, since few can match the consistent damage dealt by a well equipped, and motivated, soldier.
 
 \subsubsection*{Characteristics}
 \label{subsub:soldierCharacteristics}
 
-Most soldiers come to the profession after receiving some amount of formal training from a military organization, local militia, or private army. Some attend formal academies; others are self-taunt and well tested. A soldier may have taken up their weapon to escape a mundane life, protect a proud family traditions, or to fulfill their oath and uphold their honour. Soldiers in a particular unit share a certain camaraderie, but most have nothing in common except battle prowess and the desire to apply it to a given situation. \par
+Most soldiers come to the profession after receiving some amount of formal training from a military organization, local militia, or private army. Some attend formal academies; others are self-taunt and well tested. A soldier may have taken up their weapon to escape a mundane life, protect a proud family traditions, or to fulfill their oath and uphold their honour. Soldiers in a particular unit share a certain camaraderie, but most have nothing in common except battle prowess and the desire to apply it to a given situation.
 
-\itemLine{Individual Role} {Soldiers are physical, action-oriented people. They're more likely to overcome a challenge using hard word and perseverance as apposed to cheap tricks; they often take the most direct path towards their goal.}
+\itemLine{Individual Role}{Soldiers are physical, action-oriented people. They're more likely to overcome a challenge using hard word and perseverance as apposed to cheap tricks; they often take the most direct path towards their goal.}
 
-\itemLine{Group Role} {Soldiers usually take and deal the most punishment in a dangerous situation. Often it falls on them to protect the other group members from threats. This sometimes means that Soldiers take on leadership roles as well, at least during combat.}
+\itemLine{Group Role}{Soldiers usually take and deal the most punishment in a dangerous situation. Often it falls on them to protect the other group members from threats. This sometimes means that Soldiers take on leadership roles as well, at least during combat.}
 
-\itemLine{Societal Role} {In most cities and villages, people hold soldiers in great esteem. Although a soldier could just as likely be a thug as a noble warrior, those who help protect their fellow sentient from the dangers of apposing forces are always treated respect; or controlled by fear. There is no shame in getting paid for the use of one’s skills, so being a blade for hire is a perfectly acceptable profession.}
+\itemLine{Societal Role}{In most cities and villages, people hold soldiers in great esteem. Although a soldier could just as likely be a thug as a noble warrior, those who help protect their fellow sentient from the dangers of apposing forces are always treated respect; or controlled by fear. There is no shame in getting paid for the use of one’s skills, so being a blade for hire is a perfectly acceptable profession.}
 
-\itemLine{Advanced Soldiers} {As soldiers advance, their skill in battle--whether defending themselves or dishing out damage--increases to impressive levels. At higher tiers, they can often take on groups of foes by themselves or stand toe-to-toe with anyone.}
+\itemLine{Advanced Soldiers}{As soldiers advance, their skill in battle--whether defending themselves or dishing out damage--increases to impressive levels. At higher tiers, they can often take on groups of foes by themselves or stand toe-to-toe with anyone.}
 
 \statPool{Soldier}{10}{10}{8}{6}
 
@@ -229,7 +231,7 @@ Most soldiers come to the profession after receiving some amount of formal train
 
 Admiral Carth Onasi, Mandalore the Preserver (Canderous Ordo), Poe Dameron, Clone Captain Rex, Wedge Antilles, Agent Kallus, Brianna the Last Handmaiden, Garazeb "Zeb" Orrelios.
 
-\subsubsection*{Alternative titles}
+\subsubsection*{Alternative Titles}
 \label{subsub:soldierAlternative}
 
 Guard, Bodyguard, Enforcer, Trooper, Warrior, Mercenary.
@@ -243,30 +245,30 @@ Guard, Bodyguard, Enforcer, Trooper, Warrior, Mercenary.
 
 First-tier soldiers have the following abilities:
 
-\itemLine{Effort} {Your Effort is 1.}
+\itemLine{Effort}{Your Effort is 1.}
 
-\itemLine{Physical Nature} {You have a Might Edge
+\itemLine{Physical Nature}{You have a Might Edge
 of 1 and a Speed Edge of 0, or you have a
 Might Edge of 0 and a Speed Edge of 1.
 Either way, you have an Intellect Edge of 0.}
 
-\itemLine{Cypher Use} {You can bear two cyphers at a time.}
+\itemLine{Cypher Use}{You can bear two cyphers at a time.}
 
-\itemLine{All weapon proficiency} {You can use any non-Lightsaber weapon.\enabler}
+\itemLine{All weapon proficiency}{You can use any non-Lightsaber weapon.\enabler}
 
-\itemLine{Starting Equipment} {Appropriate clothing, two weapons of your choice, one expensive item, two moderately priced items, and up to four inexpensive items}
+\itemLine{Starting Equipment}{Appropriate clothing, two weapons of your choice, one expensive item, two moderately priced items, and up to four inexpensive items}
 
-\itemLine{Special Abilities} {Pick four from the abilities described below. Some special abilities are constant, ongoing effects, and others are specific actions that usually cost points from one of your stat Pools. You cannot choose the same ability more than once unless specified otherwise.}
+\itemLine{Special Abilities}{Pick four from the abilities described below. Some special abilities are constant, ongoing effects, and others are specific actions that usually cost points from one of your stat Pools. You cannot choose the same ability more than once unless specified otherwise.}
 
-\itemAbility{Bash (1 Might point)} {This is a pummeling melee attack. Your attack inflicts 1 less point of damage than normal, but dazes your target for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.\action}
+\itemAbility{Bash (1 Might point)}{This is a pummeling melee attack. Your attack inflicts 1 less point of damage than normal, but dazes your target for one round, during which time the difficulty of all tasks it performs is modified by one step to its detriment.\action}
 
-\itemAbility{Control the Field (1 Might point)} {This melee attack inflicts 1 less point of damage than normal, but regardless of whether you hit the target, you maneuver it into a position you desire within immediate range.\action}
+\itemAbility{Control the Field (1 Might point)}{This melee attack inflicts 1 less point of damage than normal, but regardless of whether you hit the target, you maneuver it into a position you desire within immediate range.\action}
 
-\itemAbility{Extra Edge} {Your physical nature grants you an Edge of 1 in both Speed and Might, rather than one or the other.}
+\itemAbility{Extra Edge}{Your physical nature grants you an Edge of 1 in both Speed and Might, rather than one or the other.}
 
-\itemAbility{Unarmed Fighter} {When you make an unarmed attack (such as a punch or kick), it counts as a medium weapon instead of a light weapon.\enabler}
+\itemAbility{Unarmed Fighter}{When you make an unarmed attack (such as a punch or kick), it counts as a medium weapon instead of a light weapon.\enabler}
 
-\itemAbility{Overwatch (1 Intellect point)} {You use a ranged weapon to target a limited area (such as a doorway, a hallway) and make an attack against the next viable target to enter that area. This works like a wait action, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Further, you inflict 1 additional point of damage with the attack. You can remain on Overwatch as long as you wish, within reason.\action}
+\itemAbility{Overwatch (1 Intellect point)}{You use a ranged weapon to target a limited area (such as a doorway, a hallway) and make an attack against the next viable target to enter that area. This works like a wait action, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Further, you inflict 1 additional point of damage with the attack. You can remain on Overwatch as long as you wish, within reason.\action}
 
 \itemAbility{Physical Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{climb, running, jump, swim}, or similar physical skills. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
 
@@ -405,8 +407,6 @@ Choose two of the abilities described below (or from a lower tier) to add to you
 
 \itemAbility{Weapon and Body (5 Speed points)}{After making a melee weapon or ranged weapon attack, you follow up with a punch or kick as an additional attack, all as part of the same action in one round. The two attacks can be directed at different foes. Make a separate attack roll for each attack. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to both attacks, unless it is tied specifically to your weapon.\action}
 
-\newpage
-
 % subsection* soldier (end)
 
 %
@@ -445,13 +445,13 @@ Scouts temper insatiable curiosity with excellent survival instincts. They make 
 
 Scouts come to their profession in search of something, usually knowledge or secrets or answers to the mysteries of the ages. Scholars, while possibly associated with and institute of learning or particular government, often forsake the halls of academia for the pure research of working in the field. Pathfinders and explorers may work for a government or military institutions, or freelance contracts from anyone willing to pay for their services. Many scouts develop into bounty hunters, especially those who combine military skills with their tracking and searching abilities. Every group of adventurers benefit from having a scout in the party.
 
-\itemLine{Individual Role} {Although scouts can be academics or well studied, they are first and foremost interested in action. They face grave dangers and terrible obstacles as a routine part of life.}
+\itemLine{Individual Role}{Although scouts can be academics or well studied, they are first and foremost interested in action. They face grave dangers and terrible obstacles as a routine part of life.}
 
-\itemLine{Group Role} {Scouts sometimes work alone, but far more often they operate in teams with other characters. The scout frequently leads the way, blazing the trail. However, they also likely to stop and investigate anything intriguing they stumble upon.}
+\itemLine{Group Role}{Scouts sometimes work alone, but far more often they operate in teams with other characters. The scout frequently leads the way, blazing the trail. However, they also likely to stop and investigate anything intriguing they stumble upon.}
 
-\itemLine{Societal Role} {Scouts are remarkable in that they can do so many different things, and some do multiple things. Skilled and learned scouts who share their achievements with others are prized members of society, well respected for what they know and can do.}
+\itemLine{Societal Role}{Scouts are remarkable in that they can do so many different things, and some do multiple things. Skilled and learned scouts who share their achievements with others are prized members of society, well respected for what they know and can do.}
 
-\itemLine{Advanced Scouts} {Higher-tier scouts gain more skills, some combat abilities, and a number of abilities that allow them to deal with danger. In short, they become more and more well-rounded, able to deal with any challenge.}
+\itemLine{Advanced Scouts}{Higher-tier scouts gain more skills, some combat abilities, and a number of abilities that allow them to deal with danger. In short, they become more and more well-rounded, able to deal with any challenge.}
 
 \statPool{Scout}{9}{10}{9}{6}
 
@@ -476,11 +476,11 @@ First-tier scouts have the following abilities: \par
 
 \itemLine{Effort}{Your Effort is 1.}
 
-\itemLine{Physical Nature} {You have a Might Edge of 0, a Speed Edge of 1, and an Intellect Edge of 0.}
+\itemLine{Physical Nature}{You have a Might Edge of 0, a Speed Edge of 1, and an Intellect Edge of 0.}
 
 \itemLine{Cypher Use}{You can bear two cyphers at a time.}
 
-\itemLine{Light \& Medium Weapon Proficiency} {You can use light and medium non-Lightsaber weapons without penalty. If you wield a heavy weapon, increase the difficulty of the attack by one step.\enabler}
+\itemLine{Light \& Medium Weapon Proficiency}{You can use light and medium non-Lightsaber weapons without penalty. If you wield a heavy weapon, increase the difficulty of the attack by one step.\enabler}
 
 \itemLine{Starting Equipment}{Appropriate clothing and a weapon of your choice, plus two expensive items, two moderately priced items, and up to four inexpensive items.}
 
@@ -574,9 +574,9 @@ one from a lower tier.
 
 \itemAbility{Stone Breaker}{Your attacks against objects inflict 4 additional points of damage when you use a melee weapon that you wield in two hands.\enabler}
 
-\itemAbility{Think Your Way Out}{When you wish it, you can use points from your Intellect Pool rather than your Might Pool or Speed Pool on any noncombat action.\enabler}
+\itemAbility{Think Your Way Out}{When you wish it, you can use points from your Intellect Pool rather than your Might Pool or Speed Pool on any non-combat action.\enabler}
 
-\itemAbility{Second Chance}{If you roll a natural 1 on a d20, you can reroll the die. If you reroll, you avoid a GM intrusion--unless you roll a second 1--and might succeed on your task. Once you use this ability, it is not available again until after you have undisturbed sleep for at least 10 hours.\enabler}
+\itemAbility{Second Chance}{If you roll a natural 1 on a d20, you can re-roll the die. If you re-roll, you avoid a GM intrusion--unless you roll a second 1--and might succeed on your task. Once you use this ability, it is not available again until after you have undisturbed sleep for at least 10 hours.\enabler}
 
 \itemAbility{Heavy Weapon Proficiency}{You can use non-Lightsaber heavy weapons without penalty.\enabler}
 
@@ -622,7 +622,7 @@ Choose three of the abilities described below (or from a lower tier) to add to y
 
 \itemAbility{Parry (5 Speed points)}{You can deflect incoming attacks quickly. For the next ten rounds, the difficulty of all Speed defense rolls is reduced by one step.\enabler}
 
-\itemAbility{Physically Gifted}{Any time you spend points from your Might Pool or Speed Pool on an action for any reason, if you roll a 1 on the associated die, you reroll, always taking the second result (even if it’s another 1).\enabler}
+\itemAbility{Physically Gifted}{Any time you spend points from your Might Pool or Speed Pool on an action for any reason, if you roll a 1 on the associated die, you re-roll, always taking the second result (even if it’s another 1).\enabler}
 
 \itemAbility{Take Command (3 Intellect points)}{You issue a specific command to another character. If that character chooses to listen, the difficulty of any attack he attempts is reduced by one step, and a hit deals 3 additional points of damage. If your command is to perform a task other than an attack, the difficulty of the task is reduced by two steps.\action}
 
@@ -650,8 +650,6 @@ one from a lower tier.
 \itemAbility{Blade Storm (5 Speed points)}{You stand still and make melee attacks against up to five foes within reach, all as part of the same action in one round. Make a separate attack roll for each foe. You remain limited by the amount of Effort you can apply on one action. Anything that modifies your attack or damage applies to all of these attacks.\action}
 
 \itemAbility{Wild Vitality (4 Intellect points)}{You attune with the life force of a natural creature (your size or bigger) within long range that you can see. This is a level 2 Intellect task. If you succeed, the creature is not harmed, but through resonance with its wild vitality, you gain several benefits for up to one minute: an asset to all your Might-based tasks (including attacks and defenses), +2 to your Might Edge and Speed Edge, and 2 additional points of damage on all successful melee attacks.\actionInit}
-
-\newpage
 
 % subsection* scout (end)
 
@@ -681,18 +679,20 @@ one from a lower tier.
 
 \subsection*{Scoundrel} % (fold)
 \label{sub:scoundrel}
-Scoundrels are rogues--good, bad, and neutral--who either live outside the law or manipulates it to suit their needs. They can come from any world or region in the Galaxy. Most use their Intelligence and attention to detail to accomplish tasks, and many rely on their silver-tongue when all else fails. The scoundrel gets by with bravado, dunning, duplicity, and trickery. They live by their wits, manipulating others, but can fight when the need arises.\par
+
+Scoundrels are rogues--good, bad, and neutral--who either live outside the law or manipulates it to suit their needs. They can come from any world or region in the Galaxy. Most use their Intelligence and attention to detail to accomplish tasks, and many rely on their silver-tongue when all else fails. The scoundrel gets by with bravado, dunning, duplicity, and trickery. They live by their wits, manipulating others, but can fight when the need arises.
 
 Many scoundrels live a life of adventure for the excitement it provides. Others go adventuring to advance their illicit careers. Some are good-hearted rogues in it for the thrill or to right a wrong done to them or those they love. Others are despicable knaves who serve only one master--the greed that swells inside them. Most often, an adventurous scoundrel falls somewhere in-between, changing allegiance and attitude as the political climate changes. The skills a scoundrel pick up along the way make them great members of any mission team.
 
 \subsubsection*{Characteristics}
 \label{subsub:scoundrelCharacteristics}
-Scoundrels have a knack for getting out of trouble. They have an instinct for self-preservation that keeps them alive, but it's usually tempered with a need to experience thrills that their profession has to offer, and many adventurous scoundrels are also saddle with a sense of honour that sometimes makes them go against their natural inclinations. \par
+
+Scoundrels have a knack for getting out of trouble. They have an instinct for self-preservation that keeps them alive, but it's usually tempered with a need to experience thrills that their profession has to offer, and many adventurous scoundrels are also saddle with a sense of honour that sometimes makes them go against their natural inclinations.
 
 \itemLine{Individual Role}{Scoundrels are smart and charismatic. They like people and, more important, they understand them. This helps scoundrels get others to do what needs
 to be done.}
 
-\itemLine{Group Role}{The scoundrel is often the face of the group, serving as the person who speaks for all and negotiates with others. Combat and action are not a scoundel’s immediate resolve, so other characters sometimes have to defend the speaker in times of danger.}
+\itemLine{Group Role}{The scoundrel is often the face of the group, serving as the person who speaks for all and negotiates with others. Combat and action are not a scoundrel's immediate resolve, so other characters sometimes have to defend the speaker in times of danger.}
 
 \itemLine{Societal Role}{Scoundrels are viewed from a myriad of different opinions throughout the Galaxy. One the one hand, law-abiding citizens see them as thugs, deviants, and con-artists--living only for themselves and their pocket. On the other, mercenaries and crime lord see them as a valuable and disposable asset to suit their needs. Scoundrels view other scoundrels with a variable degree of respect based on their achievements; many scoundrels achieve memorable moments in Galactic history to use as bragging rights to their peers and potential marks. Either way, scoundrels are an essential part of any functional society, since they are more willing to do high-risk tasks--for the right price.}
 
@@ -708,7 +708,7 @@ Han Solo, Lando Calrissian, Hondo Ohnaka, Atton Rand, Mission Vao, Ezra Bridger 
 \subsubsection*{Alternative titles}
 \label{subsub:scoundrelAlternative}
 
-Smuggler, Pirate, Outlaw, Gambler, Slicer, Con Artist, Thief, Rogue, Spy. 
+Smuggler, Pirate, Outlaw, Gambler, Slicer, Con Artist, Thief, Rogue, Spy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 1
@@ -717,7 +717,7 @@ Smuggler, Pirate, Outlaw, Gambler, Slicer, Con Artist, Thief, Rogue, Spy.
 \subsubsection*{First-Tier Scoundrel}
 \label{subsub:scoundrelFirstTier}
 
-First-tier Scoundrels have the following abilities: \par
+First-tier Scoundrels have the following abilities:
 
 \itemLine{Effort}{Your Effort is 1.}
 
@@ -725,106 +725,31 @@ First-tier Scoundrels have the following abilities: \par
 
 \itemLine{Cypher Use}{You can bear two cyphers at a time.}
 
-\itemLine{Light Weapon Proficiency} {You can use light non-Lightsaber weapons without penalty. If you wield a medium weapon, increase the difficulty of the attack by one step. If you wield a heavy weapon, increase the difficulty of the attack by two steps.\enabler}
+\itemLine{Light Weapon Proficiency}{You can use light non-Lightsaber weapons without penalty. If you wield a medium weapon, increase the difficulty of the attack by one step. If you wield a heavy weapon, increase the difficulty of the attack by two steps.\enabler}
 
-\itemLine{Starting Equipment} {A datapad, appropriate clothing and a light weapon of your choice, plus two expensive items, two moderately priced items, and up to four inexpensive items.}
+\itemLine{Starting Equipment}{A data pad, appropriate clothing and a light weapon of your choice, plus two expensive items, two moderately priced items, and up to four inexpensive items.}
 
 \itemLine{Special Abilities}{Choose four of the abilities described below. You can’t choose the same ability more than once unless its description says otherwise.}
 
-\itemAbility{Goading Taunt (2 Intellect points)}{Your
-piercing words taunts a character within
-short range who is able to understand you,
-unlocking their more primitive instincts. As a
-result, they gains an asset on their Might-based
-attack rolls for one minute.\actionInit}
+\itemAbility{Goading Taunt (2 Intellect points)}{Your piercing words taunts a character within short range who is able to understand you, unlocking their more primitive instincts. As a result, they gains an asset on their Might-based attack rolls for one minute.\actionInit}
 
-\itemAbility{Encouragement (1 Intellect point)}{While
-you maintain this ability through ongoing inspiring oration, 
-your allies within short range modify the difficulty of one of the
-following task types (your choice) by one
-step to their benefit: defense tasks, attack
-tasks, or tasks related to any skill that you
-are trained or specialized in.\action}
+\itemAbility{Encouragement (1 Intellect point)}{While you maintain this ability through ongoing inspiring oration, your allies within short range modify the difficulty of one of the following task types (your choice) by one step to their benefit: defense tasks, attack tasks, or tasks related to any skill that you are trained or specialized in.\action}
 
-\itemAbility{Enthrall (1 Intellect point)}{While talking,
-you grab and keep another creature’s
-attention, even if the creature can’t
-understand you. For as long as you do
-nothing but speak (you can’t even move),
-the other creature takes no actions other
-than to defend itself, even over multiple
-rounds. If the creature is attacked, the effect
-ends.\action}
+\itemAbility{Enthrall (1 Intellect point)}{While talking, you grab and keep another creature’s attention, even if the creature can’t understand you. For as long as you do nothing but speak (you can’t even move), the other creature takes no actions other than to defend itself, even over multiple rounds. If the creature is attacked, the effect ends.\action}
 
-\itemAbility{Memory Wipe (3 Intellect points)}{Through the use
-of a hidden security spike you short-circuit the processor of a droid within
-immediate range and make an Intellect roll.
-On a success, you erase up to the last five
-minutes of its memory.\action}
+\itemAbility{Memory Wipe (3 Intellect points)}{Through the use of a hidden security spike you short-circuit the processor of a droid within immediate range and make an Intellect roll. On a success, you erase up to the last five minutes of its memory.\action}
 
-\itemAbility{Fast Talk (1 Intellect point)}{When
-speaking with an intelligent creature who
-can understand you and isn’t hostile,
-you convince that creature to take one
-reasonable action in the next round. A
-reasonable action must be agreed upon by
-the GM; it should not put the creature or its
-allies in obvious danger or be wildly out of
-character.\action}
+\itemAbility{Fast Talk (1 Intellect point)}{When speaking with an intelligent creature who can understand you and isn’t hostile, you convince that creature to take one reasonable action in the next round. A reasonable action must be agreed upon by the GM; it should not put the creature or its allies in obvious danger or be wildly out of character.\action}
 
-\itemAbility{Interaction Skill Training}{You are trained in two
-skills in which you are not already trained.
-Choose two of the following: \textit{deception,
-persuasion, public speaking, detect deception, intimidation}, or a similar interaction skill. You can select
-this ability multiple times. Each time you
-select it, you must choose two different
-skills.\enabler}
+\itemAbility{Interaction Skill Training}{You are trained in two skills in which you are not already trained. Choose two of the following: \textit{deception, persuasion, public speaking, detect deception, intimidation}, or a similar interaction skill. You can select this ability multiple times. Each time you select it, you must choose two different skills.\enabler}
 
-\itemAbility{Light \& Medium Weapon Proficiency}{You can use light and medium
-weapons without penalty. If you wield a
-heavy weapon, increase the difficulty of the
-attack by one step.\enabler}
+\itemAbility{Light \& Medium Weapon Proficiency}{You can use light and medium weapons without penalty. If you wield a heavy weapon, increase the difficulty of the attack by one step.\enabler}
 
-\itemAbility{Spin Identity (2+ Intellect points)}{You
-convince all intelligent creatures who can
-see, hear, and understand you that you are
-someone or something other than who
-you actually are. You don’t impersonate
-a specific individual known to the victim.
-Instead, you convince the victim that you
-are someone they do not know belonging
-to a certain category of people. “We’re from
-the government.” “I’m just a simple farmer
-from the next town over.” “Your commander
-sent me.” A disguise isn’t necessary, but a
-good disguise will almost certainly be an
-asset to the roll involved. If you attempt
-to convince more than one creature, the
-Intellect cost increases by 1 point per
-additional victim. Fooled creatures remain
-so for up to an hour, unless your actions
-or other circumstances reveal your true
-identity earlier.\action}
+\itemAbility{Spin Identity (2+ Intellect points)}{You convince all intelligent creatures who can see, hear, and understand you that you are someone or something other than who you actually are. You don’t impersonate a specific individual known to the victim. Instead, you convince the victim that you are someone they do not know belonging to a certain category of people. “We’re from the government.” “I’m just a simple farmer from the next town over.” “Your commander sent me.” A disguise isn’t necessary, but a good disguise will almost certainly be an asset to the roll involved. If you attempt to convince more than one creature, the Intellect cost increases by 1 point per additional victim. Fooled creatures remain so for up to an hour, unless your actions or other circumstances reveal your true identity earlier.\action}
 
-\itemAbility{Terrifying Presence (2+ Intellect points)}{
-You convince one intelligent target of level
-3 or lower that you are its worst nightmare.
-The target must be within short range and
-be able to understand you. For as long as
-you do nothing but speak (you can’t even
-move), the target is paralyzed with fear,
-runs away, or takes some other action
-appropriate to the circumstances. Instead
-of applying Effort to decrease the difficulty
-of the roll, you can apply Effort to increase
-the maximum level of the target. Thus, to terrorize a level 5 target (two levels above
-the normal limit), you must apply two levels
-of Effort.\action}
+\itemAbility{Terrifying Presence (2+ Intellect points)}{ You convince one intelligent target of level 3 or lower that you are its worst nightmare. The target must be within short range and be able to understand you. For as long as you do nothing but speak (you can’t even move), the target is paralyzed with fear, runs away, or takes some other action appropriate to the circumstances. Instead of applying Effort to decrease the difficulty of the roll, you can apply Effort to increase the maximum level of the target. Thus, to terrorize a level 5 target (two levels above the normal limit), you must apply two levels of Effort.\action}
 
-\itemAbility{Understanding (2 Intellect points)}{You
-observe or study a creature or object. The
-next time you interact with it, the difficulty
-of the related task is reduced by one step.\action}
+\itemAbility{Understanding (2 Intellect points)}{You observe or study a creature or object. The next time you interact with it, the difficulty of the related task is reduced by one step.\action}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 2
@@ -833,56 +758,19 @@ of the related task is reduced by one step.\action}
 \subsubsection*{Second-Tier Scoundrel}
 \label{subsub:scoundrelSecondTier}
 
-Choose two of the abilities described
-below (or from a lower tier) to add to your
-repertoire. In addition, you can replace one
-of your lower-tier abilities with a different
-one from a lower tier.\par
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
 
-\itemAbility{Babel}{After hearing a language spoken
-for a few minutes, you can speak it and
-make yourself understood. If you continue
-to use the language to interact with native
-speakers, your skills improve rapidly, to
-the point where you might be mistaken for
-a native speaker after just a few hours of
-speaking the new language.\enabler}
+\itemAbility{Babel}{After hearing a language spoken for a few minutes, you can speak it and make yourself understood. If you continue to use the language to interact with native speakers, your skills improve rapidly, to the point where you might be mistaken for a native speaker after just a few hours of speaking the new language.\enabler}
 
-\itemAbility{Impersonate (2 Intellect points)}{You alter
-your voice, posture, and mannerisms, whip
-together a disguise, and gain an asset on
-an attempt to impersonate someone else,
-whether it is a specific individual or a general role.\actionInit}
+\itemAbility{Impersonate (2 Intellect points)}{You alter your voice, posture, and mannerisms, whip together a disguise, and gain an asset on an attempt to impersonate someone else, whether it is a specific individual or a general role.\actionInit}
 
-\itemAbility{Armor Proficiency}{You can wear armor
-for long periods of time without tiring
-and can compensate for slowed reactions
-from wearing armor. You can wear any kind
-of armor. You reduce the Speed cost for
-wearing armor by 1. You start the game with
-armor of your choice.\enabler}
+\itemAbility{Armor Proficiency}{You can wear armor for long periods of time without tiring and can compensate for slowed reactions from wearing armor. You can wear any kind of armor. You reduce the Speed cost for wearing armor by 1. You start the game with armor of your choice.\enabler}
 
-\itemAbility{Skill Training}{You are trained in one task of your
-choosing (other than attacks or defense). If
-you choose a task you’re already trained in,
-you become specialized in that task. You can’t
-choose a task you’re already specialized in.\enabler}
+\itemAbility{Skill Training}{You are trained in one task of your choosing (other than attacks or defense). If you choose a task you’re already trained in, you become specialized in that task. You can’t choose a task you’re already specialized in.\enabler}
 
-\itemAbility{Unlicensed Medical Advice (3 Intellect points)}{Your experience in personal injury treatment is shared vocally to character within short range that can understand you.
-When they make a recovery roll, they must spend only half the
-normal amount of time required to do so
-(minimum one action).\action}
+\itemAbility{Unlicensed Medical Advice (3 Intellect points)}{Your experience in personal injury treatment is shared vocally to character within short range that can understand you. When they make a recovery roll, they must spend only half the normal amount of time required to do so (minimum one action).\action}
 
-\itemAbility{Unexpected Betrayal}{Within a round or
-two of successfully using Enthrall, Fast Talk,
-or a similar ability on a target within short
-range, the difficulty of the first attack you
-make on that target is decreased by two
-steps. Once you use Unexpected Betrayal
-on a target, the difficulty of using your
-abilities or attempting simple persuasion on
-that target is permanently increased by two
-steps.\enabler.}
+\itemAbility{Unexpected Betrayal}{Within a round or two of successfully using Enthrall, Fast Talk, or a similar ability on a target within short range, the difficulty of the first attack you make on that target is decreased by two steps. Once you use Unexpected Betrayal on a target, the difficulty of using your abilities or attempting simple persuasion on that target is permanently increased by two steps.\enabler.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 3
@@ -891,76 +779,23 @@ steps.\enabler.}
 \subsubsection*{Third-Tier Scoundrel}
 \label{subsub:scoundrelThirdTier}
 
-Choose three of the abilities described
-below (or from a lower tier) to add to your
-repertoire. In addition, you can replace one
-of your lower-tier abilities with a different
-one from a lower tier.\par
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
 
-\itemAbility{Hurry Up! (4+ Intellect points)}{Your
-words imbue a character within
-immediate range who is able to understand
-you, accelerating them so that they gain an
-asset on initiative tasks and Speed defense
-rolls for ten minutes. Instead of applying Effort to decrease the difficulty, you can use
-it to affect more targets; each level of Effort
-affects one additional target. You must
-speak to additional targets to accelerate
-them, one target per round. Action per
-2target to initiate.\actionInitTarget}
+\itemAbility{Hurry Up! (4+ Intellect points)}{Your words imbue a character within immediate range who is able to understand you, accelerating them so that they gain an asset on initiative tasks and Speed defense rolls for ten minutes. Instead of applying Effort to decrease the difficulty, you can use it to affect more targets; each level of Effort affects one additional target. You must speak to additional targets to accelerate them, one target per round. Action per target to initiate.\actionInitTarget}
 
-\itemAbility{Blend In (4 Intellect points)}{When you
-blend in, creatures still see you, but they
-attach no importance to your presence for
-about a minute. While blending in, you are
-specialized in stealth and Speed defense
-tasks. This effect ends if you do something
-to reveal your presence or position--
-attacking, using an ability, moving a large
-object, and so on. If this occurs, you can
-regain the remaining period of effect by
-taking an action to focus on seeming
-innocuous and as if you belong.\actionInit}
+\itemAbility{Blend In (4 Intellect points)}{When you blend in, creatures still see you, but they attach no importance to your presence for about a minute. While blending in, you are specialized in stealth and Speed defense tasks. This effect ends if you do something to reveal your presence or position-- attacking, using an ability, moving a large object, and so on. If this occurs, you can regain the remaining period of effect by taking an action to focus on seeming innocuous and as if you belong.\actionInit}
 
-\itemAbility{Discerning Mind}{You have +3 to Armor
-against damaging attacks and damaging
-effects that target your mind and Intellect.
-The difficulty of defense rolls you make
-against attacks that attempt to confuse,
-persuade, frighten, or otherwise influence
-you is decreased by one step.\enabler}
+\itemAbility{Discerning Mind}{You have +3 to Armor against damaging attacks and damaging effects that target your mind and Intellect. The difficulty of defense rolls you make against attacks that attempt to confuse, persuade, frighten, or otherwise influence you is decreased by one step.\enabler}
 
-\itemAbility{Expert Cypher Use}{You can bear three
-cyphers at a time.}
+\itemAbility{Expert Cypher Use}{You can bear three cyphers at a time.}
 
-\itemAbility{Grand Deception (3 Intellect points)}{You convince an intelligent creature that
-can understand you and isn’t hostile of
-something that is wildly and obviously
-untrue.\action}
+\itemAbility{Grand Deception (3 Intellect points)}{You convince an intelligent creature that can understand you and isn’t hostile of something that is wildly and obviously untrue.\action}
 
-\itemAbility{Haywire Intrusion (4 Intellect points)}{
-Your sneaky datapad device is able to intrude the memory of a droid
-within a short range, even if it doesn’t want
-you to. You must be able to see the target.
-Once you have established contact, you
-can read the target’s memory command for up to one
-minute. If you or the target moves out of
-range, the connection is broken.\actionInit}
+\itemAbility{Haywire Intrusion (4 Intellect points)}{ Your sneaky data pad device is able to intrude the memory of a droid within a short range, even if it doesn’t want you to. You must be able to see the target. Once you have established contact, you can read the target’s memory command for up to one minute. If you or the target moves out of range, the connection is broken.\actionInit}
 
-\itemAbility{Oratory (4 Intellect points)}{When
-speaking with a group of intelligent
-creatures that can understand you and
-aren’t hostile, you convince them to take
-one reasonable action in the next round. A reasonable action must be agreed upon by
-the GM; it should not put the creatures or
-their allies in obvious danger or be wildly
-out of character.\action}
+\itemAbility{Oratory (4 Intellect points)}{When speaking with a group of intelligent creatures that can understand you and aren’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by the GM; it should not put the creatures or their allies in obvious danger or be wildly out of character.\action}
 
-\itemAbility{Telling (2 Intellect points)}{This ability
-provides an asset to any tasks attempting to
-deceive, persuade, or intimidate. Each use
-lasts up to a minute; a new use (to switch
-tasks) replaces the previous use.\actionInit}
+\itemAbility{Telling (2 Intellect points)}{This ability provides an asset to any tasks attempting to deceive, persuade, or intimidate. Each use lasts up to a minute; a new use (to switch tasks) replaces the previous use.\actionInit}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 4
@@ -969,64 +804,23 @@ tasks) replaces the previous use.\actionInit}
 \subsubsection*{Fourth-Tier Scoundrel}
 \label{subsub:scoundrelFourthTier}
 
-Choose two of the abilities described
-below (or from a lower tier) to add to your
-repertoire. In addition, you can replace one
-of your lower-tier abilities with a different
-one from a lower tier.\par 
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
 
-\itemAbility{Anticipate Attack (4 Intellect points)}{You can sense when and how creatures
-attacking you will make their attacks. The
-difficulty of Speed defense rolls is reduced
-by one step for one minute.\action}
+\itemAbility{Anticipate Attack (4 Intellect points)}{You can sense when and how creatures attacking you will make their attacks. The difficulty of Speed defense rolls is reduced by one step for one minute.\action}
 
-\itemAbility{Confounding Banter (4 Intellect points)}{You spew a stream of nonsense to distract
-a foe within immediate range. On a
-successful Intellect roll, the difficulty of
-your defense roll against the creature’s next
-attack before the end of the next round is
-reduced by one step.\action}
+\itemAbility{Confounding Banter (4 Intellect points)}{You spew a stream of nonsense to distract a foe within immediate range. On a successful Intellect roll, the difficulty of your defense roll against the creature’s next attack before the end of the next round is reduced by one step.\action}
 
 \itemAbility{Deceptive Strike (2 Speed points)}{If you spend one action creating a misdirection or diversion, in the next round you can take advantage of your opponent’s lowered defenses. Make a melee attack roll against that opponent. The difficulty of the roll is decreased by one step. If your attack is successful, it inflicts 4 additional points of damage.\action}
 
-\itemAbility{Heightened Skills}{You are trained in two
-tasks of your choosing (other than attacks
-or defense). If you choose a task you’re
-already trained in, you instead become
-specialized in that task. You can’t choose a
-task you’re already specialized in.}
+\itemAbility{Heightened Skills}{You are trained in two tasks of your choosing (other than attacks or defense). If you choose a task you’re already trained in, you instead become specialized in that task. You can’t choose a task you’re already specialized in.}
 
-\itemAbility{Nerve Strike (4 Intellect points)}{Upon 
-discovering a potential weak-spot in a creature's nervous system you
-attack with pinpoint accuracy, dealing 6 points of Intellect
-damage (ignores Armor) per round. The
-debilitation can be dispersed if a target
-spends an action doing nothing.\actionInit}
+\itemAbility{Nerve Strike (4 Intellect points)}{Upon discovering a potential weak-spot in a creature's nervous system you attack with pinpoint accuracy, dealing 6 points of Intellect damage (ignores Armor) per round. The debilitation can be dispersed if a target spends an action doing nothing.\actionInit}
 
-\itemAbility{Quick Wits}{When performing a task that
-would normally require spending points from
-your Intellect Pool, you can spend points
-from your Speed Pool instead.\enabler}
+\itemAbility{Quick Wits}{When performing a task that would normally require spending points from your Intellect Pool, you can spend points from your Speed Pool instead.\enabler}
 
-\itemAbility{Read the Signs (4 Intellect points)}{You
-examine an area and learn precise, useful
-details about the past (if any exist). You can
-ask the GM up to four questions about the
-immediate area; each requires its own roll.
-\action}
+\itemAbility{Read the Signs (4 Intellect points)}{You examine an area and learn precise, useful details about the past (if any exist). You can ask the GM up to four questions about the immediate area; each requires its own roll. \action}
 
-\itemAbility{Suggestion (4 Intellect points)}{You
-suggest an action to another creature (level
-2 or lower) within immediate range. If the
-action doesn’t seem completely at odds
-with the creature’s nature, it follows your
-suggestion for up to a minute. Instead of
-applying Effort to decrease the difficulty,
-you can apply it to increase the maximum
-level of the target by 1. When the effect
-ends, the creature remembers following the
-suggestion, but believes that it chose to do
-so willingly. \actionInit}
+\itemAbility{Suggestion (4 Intellect points)}{You suggest an action to another creature (level 2 or lower) within immediate range. If the action doesn’t seem completely at odds with the creature’s nature, it follows your suggestion for up to a minute. Instead of applying Effort to decrease the difficulty, you can apply it to increase the maximum level of the target by 1. When the effect ends, the creature remembers following the suggestion, but believes that it chose to do so willingly. \actionInit}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 5
@@ -1035,55 +829,21 @@ so willingly. \actionInit}
 \subsubsection*{Fifth-Tier Scoundrel}
 \label{subsub:scoundrelFifthTier}
 
-Choose three of the abilities described
-below (or from a lower tier) to add to your
-repertoire. In addition, you can replace one
-of your lower-tier abilities with a different
-one from a lower tier. \par
+Choose three of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
 
-\itemAbility{Adroit Cypher Use}{You can bear four
-cyphers at a time.}
+\itemAbility{Adroit Cypher Use}{You can bear four cyphers at a time.}
 
 \itemAbility{Armor Expertise}{The cost reduction from your Armor Proficiency ability improves. You now reduce the Speed cost for wearing armor by 2. Must have \textit{Armor Proficiency} to benefit from this ability.\enabler}
 
-\itemAbility{Flee (6 Intellect points)}{All non-allies
-within short distance who can hear your
-dreadful, intimidating words flee from you
-at top speed for one minute.}
+\itemAbility{Flee (6 Intellect points)}{All non-allies within short distance who can hear your dreadful, intimidating words flee from you at top speed for one minute.}
 
-\itemAbility{Scoundrel's Luck (4 Intelligence points)}{When
-you roll for a task and succeed, roll again. If
-the second number rolled is higher than the
-first, you get a minor effect. If you roll the
-same number again, you get a major effect. 
-If you roll lower then nothing happens.
-\enabler}
+\itemAbility{Scoundrel's Luck (4 Intelligence points)}{When you roll for a task and succeed, roll again. If the second number rolled is higher than the first, you get a minor effect. If you roll the same number again, you get a major effect. If you roll lower then nothing happens. \enabler}
 
-\itemAbility{Jury-Rig (5 Intellect points)}{You quickly
-create an object using what would seem to be entirely inappropriate materials.
-You can make a bomb out of a tin can
-and household cleaners, a security spike out
-of scrapped droid parts, or a make-shift blaster out of
-some base components. The level of the item
-determines the difficulty of the task, but the
-appropriateness of the materials modifies
-it as well. Generally, the object can be no
-larger than something you can hold in one
-hand, and it functions once (or, in the case
-of a weapon or similar item, is essentially
-useful for one encounter). If you spend
-at least ten minutes on the task, you can
-create an item of level 5 or lower. You can’t
-change the nature of the materials involved.
-For example, you can’t take iron rods and
-make a pile of gold coins or a wicker basket.\action}
+\itemAbility{Jury-Rig (5 Intellect points)}{You quickly create an object using what would seem to be entirely inappropriate materials. You can make a bomb out of a tin can and household cleaners, a security spike out of scrapped droid parts, or a make-shift blaster out of some base components. The level of the item determines the difficulty of the task, but the appropriateness of the materials modifies it as well. Generally, the object can be no larger than something you can hold in one hand, and it functions once (or, in the case of a weapon or similar item, is essentially useful for one encounter). If you spend at least ten minutes on the task, you can create an item of level 5 or lower. You can’t change the nature of the materials involved. For example, you can’t take iron rods and make a pile of gold coins or a wicker basket.\action}
 
 \itemAbility{Weapon Training}{Choose one type of attack in which you are not already trained: \textit{light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged}. You are trained in attacks using that type of weapon. You can select this ability multiple times. Each time you select it, you must choose a different type of attack.\enabler}
 
-\itemAbility{Stimulate (6 Intellect points)}{Your words
-encourage a target you touch who can
-understand you. The difficulty of the next
-action it takes is decreased by three steps.\action}
+\itemAbility{Stimulate (6 Intellect points)}{Your words encourage a target you touch who can understand you. The difficulty of the next action it takes is decreased by three steps.\action}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SCOUNDREL TIER 6
@@ -1092,66 +852,44 @@ action it takes is decreased by three steps.\action}
 \subsubsection*{Sixth-Tier Scoundrel}
 \label{subsub:scoundrelSixthTier}
 
-Choose two of the abilities described
-below (or from a lower tier) to add to your
-repertoire. In addition, you can replace one
-of your lower-tier abilities with a different
-one from a lower tier. \par
+Choose two of the abilities described below (or from a lower tier) to add to your repertoire. In addition, you can replace one of your lower-tier abilities with a different one from a lower tier.
 
-\itemAbility{Battle Management (4 Intellect points)}{As long as you spend your action each
-round giving orders or advice, the difficulty
-of attack and defense actions by your allies
-within short range is decreased by one step.\action}
+\itemAbility{Battle Management (4 Intellect points)}{As long as you spend your action each round giving orders or advice, the difficulty of attack and defense actions by your allies within short range is decreased by one step.\action}
 
-\itemAbility{Inspiring Success (6 Intellect points)}{When you succeed on a roll to perform
-a task related to the stat that you choose
-upon selecting this ability, and you applied
-at least one level of Effort, you may choose
-another character within short range.
-That PC has an asset on the next task they
-attempt using that stat on her next turn.\enabler}
+\itemAbility{Inspiring Success (6 Intellect points)}{When you succeed on a roll to perform a task related to the stat that you choose upon selecting this ability, and you applied at least one level of Effort, you may choose another character within short range. That PC has an asset on the next task they attempt using that stat on her next turn.\enabler}
 
-\itemAbility{Dangerous Showdown (7+ Intellect points)}{Your
-knowledge in creature anatomy, coupled with the quick draw of your trusty blaster
-allows you to deliver a paralytic ranged attack to every intelligent level 1 target within
-short range that can understand you. This deadly attack reduces each target to a vegetative state. 
-Instead of applying Effort to decrease the difficulty of
-the attack, you can apply Effort to increase
-the maximum level of the target. Thus, to
-pinpoint the weak-spot of a level 5 target (four
-levels above the normal limit), you must
-apply four levels of Effort.\action}
+\itemAbility{Dangerous Showdown (7+ Intellect points)}{Your knowledge in creature anatomy, coupled with the quick draw of your trusty blaster allows you to deliver a paralytic ranged attack to every intelligent level 1 target within short range that can understand you. This deadly attack reduces each target to a vegetative state. Instead of applying Effort to decrease the difficulty of the attack, you can apply Effort to increase the maximum level of the target. Thus, to pinpoint the weak-spot of a level 5 target (four levels above the normal limit), you must apply four levels of Effort.\action}
 
-\itemAbility{Scoundrel's Awareness}{Years alone in the Galaxy has conditioned you to identify trouble and deception.
-You recognize holograms, disguises, optical illusions, sound mimicry,
-and other such tricks (for all senses) for
-what they are.\action}
+\itemAbility{Scoundrel's Awareness}{Years alone in the Galaxy has conditioned you to identify trouble and deception. You recognize holograms, disguises, optical illusions, sound mimicry, and other such tricks (for all senses) for what they are.\action}
 
-\itemAbility{Haywire Override (8 Intellect points)}{
-Through the use of a black-market droid override spike, you are able to 
-control the functions of any machine, intelligent or otherwise. You
-must touch the machine to insert the spike,
-but afterward, there is no range limitation.
-This effect lasts for one week. You can
-master only one machine at a time.\actionInit}
+\itemAbility{Haywire Override (8 Intellect points)}{ Through the use of a black-market droid override spike, you are able to control the functions of any machine, intelligent or otherwise. You must touch the machine to insert the spike, but afterward, there is no range limitation. This effect lasts for one week. You can master only one machine at a time.\actionInit}
 
 % subsection* scoundrel (end)
 
-\end{docsection}
+% section types (end)
 
-%Foci
-\begin{docsection}{Foci}
+\section{Descriptors} % (fold)
+\label{sec:descriptors}
 
 Space to be filled with content. This should also be a multi-column page.
 
-\end{docsection}
+% section descriptors (end)
 
-%The Force
-\begin{docsection}{The Force}
+% chapter characters (end)
+
+\section{Foci} % (fold)
+\label{sec:foci}
+
+Space to be filled with content. This should also be a multi-column page.
+
+% section foci (end)
+
+\section{The Force} % (fold)
+\label{sec:the_force}
 
 Unlike the Star Wars Saga rule set and other homebrew systems, these rules do not restrict force sensitivity to a particular class; force sensitivity is instead treated as an additional skill tree that can be pursued by players at the DM's discretion.
 
-\end{docsection}
+% section the_force (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End document
